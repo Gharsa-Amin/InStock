@@ -1,4 +1,37 @@
-@use "./styles/partials/mixins";
+@use "./styles/partials/variables" as *;
+@use "./styles/partials/typography" as *;
+@use "./styles/partials/mixins" as *;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $primary-font;
+}
+
+h1 {
+  font-size: 1.75rem;
+  line-height: 2.25rem;
+}
+
+h2 {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+h3 {
+  font-size: 0.8125rem;
+  line-height: 1.25rem;
+}
+
+h4 {
+  font-size: 0.6875rem;
+  line-height: 1rem;
+}
+
+.link {
+  text-decoration: none;
+}
 
 .app {
   background-color: #ffffff;
