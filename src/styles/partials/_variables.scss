@@ -1,5 +1,7 @@
 // FONT
 $primary-font: "Titillium Web", sans-serif;
+$font-semibold: 600;
+$font-regular: 400;
 
 // PRIMARY COLORS
 $global-text-color: #131826;
@@ -33,7 +35,9 @@ $margin-tablet: 1.5rem;
 $margin-desktop: auto;
 
 //PADDING
-$padding-increment: 0.5rem;
+$padding-increment: 8px;
+$h1-padding: 24px;
+$spacing-between-elements: 16px;
 
 //BUTTONS
 $button-height-mobile: 36px;

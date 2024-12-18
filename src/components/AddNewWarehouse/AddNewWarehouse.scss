@@ -1,0 +1,78 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/mixins" as *;
+
+.new-warehouse {
+  @include flex(column, center, center);
+
+  &__wrapper {
+    background-color: $global-white-color;
+    width: 90%;
+  }
+}
+
+.header-wrapper {
+  padding: $h1-padding 0px;
+}
+
+.h1 {
+  @include flex(row, flex-start, center);
+}
+
+svg {
+  margin-right: $spacing-between-elements;
+}
+
+.warehouse {
+  &__info-wrapper {
+    @include flex(column, flex-start, stretch);
+    padding-bottom: $padding-increment;
+  }
+
+  &__header {
+    padding-bottom: $spacing-between-elements * 2;
+  }
+
+  &__label {
+    font-weight: $font-semibold;
+    padding-bottom: $padding-increment;
+  }
+
+  &__input {
+    border: solid 1px $outlines-dividers-borders-tablesorting-color;
+    border-radius: $form-border-radius;
+    height: $form-field-height-mobile;
+    padding: 0px $form-padding-sides;
+  }
+}
+
+.details {
+  padding: 16px 0px;
+}
+
+hr {
+  border: solid 1px $outlines-dividers-borders-tablesorting-color;
+}
+
+.buttons {
+  margin: $spacing-between-elements 0px;
+  width: 100%;
+  @include flex(row, space-between, center);
+
+  &__button {
+    height: $button-height-mobile;
+    padding: 0px $button-width-padding;
+    border-radius: $button-border-radius;
+    border: solid 1px $outlines-dividers-borders-tablesorting-color;
+    width: 48%;
+  }
+}
+
+.cancel {
+  background-color: $global-white-color;
+}
+
+.add-warehouse {
+  background-color: $interactive-elements-color;
+  color: $global-white-color;
+}
