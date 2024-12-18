@@ -1,5 +1,6 @@
 import InventoryHeader from "../InventoryHeader/InventoryHeader";
 import InventoryListItem from "../InventoryListItem/InventoryListItem";
+import SortSVG from "../SortSVG/SortSVG";
 import "./InventoryList.scss";
 
 const InventoryList = () => {
@@ -68,6 +69,34 @@ const InventoryList = () => {
   return (
     <section className="inventory-page">
       <InventoryHeader />
+      <div className="inventory-nav">
+        <h4 className="inventory-nav__header">
+          INVENTORY ITEM
+          <SortSVG />
+        </h4>
+        <h4 className="inventory-nav__header">
+          CATEGORY
+          <SortSVG />
+        </h4>
+        <div className="inventory-nav__header inventory-nav__header--flex">
+          <h4 className="inventory-nav__header">
+            STATUS
+            <SortSVG />
+          </h4>
+          <h4 className="inventory-nav__header">
+            QTY
+            <SortSVG />
+          </h4>
+          <h4 className="inventory-nav__header">
+            WAREHOUSE
+            <SortSVG />
+          </h4>
+        </div>
+        <h4 className="inventory-nav__header inventory-nav__header--action ">
+          ACTIONS
+          <SortSVG />
+        </h4>
+      </div>
       <section className="inventory">
         {inventoryItems.map((inventoryItem) => {
           return (

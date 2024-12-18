@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./InventoryListItem.scss";
+import SortSVG from "../SortSVG/SortSVG";
 
 const InventoryListItem = ({ inventoryItem }) => {
   const [isInStock, setIsInStock] = useState("in Stock");
@@ -34,9 +35,9 @@ const InventoryListItem = ({ inventoryItem }) => {
           <h4 className="inventory-list-item__header">STATUS</h4>
           <button
             className={`inventory-list-item__tag ${
-              isInStock
-                ? "inventory-list-item__tag--true"
-                : "inventory-list-item__tag--false"
+              inventoryItem.status === "In Stock ?"
+                ? "inventory-list-item__tag"
+                : "inventory-list-item__tag"
             }`}
           >
             {inventoryItem.status}
