@@ -1,14 +1,13 @@
 import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import InventoryList from "./components/InventoryList/InventoryList";
 //import "./App.scss";
-import InventoryPage from "./pages/InventoryPage/InventoryPage";
 
 function App() {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/inventory" element={<InventoryPage />}></Route>
-      </Routes>
+      <Routes></Routes>
+      <InventoryList />
     </BrowserRouter>
   );
 }
