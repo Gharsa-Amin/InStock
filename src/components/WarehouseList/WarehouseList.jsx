@@ -24,21 +24,31 @@ export default function WarehouseList({}) {
 	return (
 		<section className="warehouse-list">
 			{warehouses.map((warehouse) => (
-				<Link key={warehouses.id}>
+				<div key={warehouses.id}>
 					<div className="warehouse-list__name">
-						{warehouses.warehouse_name}
+						<h3>WAREHOUSE</h3>
+						<p>{warehouse.warehouse_name}</p>
 					</div>
-					<div className="warehouse-list__address">{warehouse.address}</div>
-					<div className="warehouse-list__city">{warehouse.city}</div>
+					<div className="warehouse-list__address">
+						<h3>ADDRESS</h3>
+						<p>{warehouse.address}</p>
+						<p>{warehouse.city}</p>
+						<p>{warehouse.country}</p>
+					</div>
 					<div className="warehouse-list__contact">
-						{warehouse.contact_name}
+						<h3>CONTACT NAME</h3>
+						<div>{warehouse.contact_name}</div>
 					</div>
-					<div className="warehouse-list__position">
-						{warehouse.contact_position}
+					<div className="warehouse-list__contact-details">
+						<h3>CONTACT INFORMATION</h3>
+						<div className="warehouse-list__phone">
+							{warehouse.contact_phone}
+						</div>
+						<div className="warehouse-list__email">
+							{warehouse.contact_email}
+						</div>
 					</div>
-					<div className="warehouse-list__phone">{warehouse.contact_phone}</div>
-					<div className="warehouse-list__email">{warehouse.contact_email}</div>
-				</Link>
+				</div>
 			))}
 		</section>
 	);
