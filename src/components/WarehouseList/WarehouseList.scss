@@ -1,7 +1,150 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/mixins" as *;
+
+body {
+	// background-color: $page-background-color;
+	color: $global-text-color;
+	font-family: $primary-font;
+}
+.warehouse-list__name {
+	color: $interactive-elements-color;
+	padding-top: $padding-increment;
+	padding-bottom: $padding-increment;
+	width: 50%;
+}
+.warehouse-list__contact {
+	width: 50%;
+}
+.warehouse-list {
+	padding: 1.5625rem;
+	&__title {
+		color: $table-column-header-color;
+		padding-top: 1rem;
+		@include tablet {
+			display: none;
+		}
+	}
+	&__address {
+		display: flex;
+		flex-direction: column;
+		&-title {
+			color: $table-column-header-color;
+			padding-bottom: $padding-increment;
+			padding-top: $padding-increment;
+			@include tablet {
+				display: none;
+			}
+		}
+	}
+	&__contact-name {
+		color: $table-column-header-color;
+		padding-bottom: $padding-increment;
+		padding-top: 1rem;
+		@include tablet {
+			display: none;
+		}
+	}
+	&__contact-header {
+		color: $table-column-header-color;
+		@include tablet {
+			display: none;
+		}
+	}
+}
+.warehouse-list__contact {
+	padding-right: 2.7rem;
+	padding-bottom: $padding-increment;
+	@include tablet {
+		display: none;
+	}
+}
 .warehouse-wrapper {
 	display: flex;
 }
 
-.warehouse-list__address {
+.warehouse-list__image {
+	height: 24px;
+	width: 24px;
+	margin-top: $padding-increment;
+	margin-bottom: $padding-increment;
+	margin-left: 1rem;
+	@include tablet {
+		display: none;
+	}
+}
+
+// .top-wrapper {
+// 	display: flex;
+// 	justify-content: space-between;
+// }
+
+// .bottom-wrapper {
+// 	display: flex;
+// 	justify-content: space-between;
+// 	border-bottom: 1px solid $outlines-dividers-borders-tablesorting-color;
+// 	@include tablet {
+// 		border-bottom: none;
+// 	}
+// }
+
+.warehouse-list__contact-header {
+	padding-top: $padding-increment;
+}
+
+.warehouse-list__phone {
+	padding-bottom: $padding-increment;
+	padding-top: $padding-increment;
+}
+
+.warehouse-list__image-contact {
+	padding-bottom: $padding-increment;
+	padding-top: 1.2rem;
+	padding-left: 6rem;
+	@include tablet {
+		display: none;
+	}
+}
+.warehouse-top__row-title {
+	display: none;
+	@include tablet {
+		display: flex;
+	}
+}
+
+.warehouse-top__row {
+	display: none;
+	@include tablet {
+		display: flex;
+		justify-content: space-between;
+		color: $table-column-header-color;
+	}
+}
+.top-tablet {
 	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	gap: 0.625rem;
+	border-top: 1px solid $outlines-dividers-borders-tablesorting-color;
+	@include tablet {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		padding: 2rem;
+	}
+}
+.warehouse-list__contact-tablet {
+	display: none;
+	@include tablet {
+		display: flex;
+	}
+}
+.warehouse-actions {
+	display: none;
+	@include tablet {
+		display: flex;
+		height: 24px;
+		width: 24px;
+	}
 }
