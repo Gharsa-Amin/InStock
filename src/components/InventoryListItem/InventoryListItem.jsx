@@ -1,38 +1,55 @@
+import { useState } from "react";
 import "./InventoryListItem.scss";
 
 const InventoryListItem = ({ inventoryItem }) => {
+  const [isInStock, setIsInStock] = useState("in Stock");
+
   return (
     <section className="inventory-list-item">
-      <div className="inventory-list-item__flex-left">
-        <h4 className="inventory-list-item__header">INVENTORY ITEM</h4>
-        <p className="inventory-list-item__detail inventory-list-item__detail--inventory">
-          {inventoryItem.item_name}
-          <svg
-            width="15"
-            height="15"
-            viewBox="0 -2 17 20"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M9.99997 6L8.58997 7.41L13.17 12L8.58997 16.59L9.99997 18L16 12L9.99997 6Z"
-              fill="#2E66E6"
-            />
-          </svg>
-        </p>
-        <h4 className="inventory-list-item__header">CATEGORY</h4>
-        <p className="inventory-list-item__detail">{inventoryItem.category}</p>
-      </div>
+      <div className="inventory-list-item__section">
+        <div className="inventory-list-item__flex-left">
+          <h4 className="inventory-list-item__header">INVENTORY ITEM</h4>
+          <p className="inventory-list-item__detail inventory-list-item__detail--inventory">
+            {inventoryItem.item_name}
+            <svg
+              width="15"
+              height="15"
+              viewBox="0 -2 17 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M9.99997 6L8.58997 7.41L13.17 12L8.58997 16.59L9.99997 18L16 12L9.99997 6Z"
+                fill="#2E66E6"
+              />
+            </svg>
+          </p>
+          <h4 className="inventory-list-item__header">CATEGORY</h4>
+          <p className="inventory-list-item__detail">
+            {inventoryItem.category}
+          </p>
+        </div>
 
-      <div className="inventory-list-item__flex-right">
-        <h4 className="inventory-list-item__header">STATUS</h4>
-        <p className="inventory-list-item__status">{inventoryItem.status}</p>
-        <h4 className="inventory-list-item__header">QTY</h4>
-        <p className="inventory-list-item__detail">{inventoryItem.quantity}</p>
-        <h4 className="inventory-list-item__header">WAREHOUSE</h4>
-        <p className="inventory-list-item__detail">
-          {inventoryItem.warehouse_id}
-        </p>
+        <div className="inventory-list-item__flex-right">
+          <h4 className="inventory-list-item__header">STATUS</h4>
+          <button
+            className={`inventory-list-item__tag ${
+              isInStock
+                ? "inventory-list-item__tag--true"
+                : "inventory-list-item__tag--false"
+            }`}
+          >
+            {inventoryItem.status}
+          </button>
+          <h4 className="inventory-list-item__header">QTY</h4>
+          <p className="inventory-list-item__detail">
+            {inventoryItem.quantity}
+          </p>
+          <h4 className="inventory-list-item__header">WAREHOUSE</h4>
+          <p className="inventory-list-item__detail">
+            {inventoryItem.warehouse_id}
+          </p>
+        </div>
       </div>
 
       <div className="inventory-list-item__edit">

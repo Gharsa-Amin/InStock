@@ -1,0 +1,10 @@
+@use "../../styles/partials/variables" as *;
+
+.inventory-page {
+  background-color: $page-background-color;
+  padding: $padding-mobile;
+}
+
+.inventory {
+  background-color: $global-white-color;
+}

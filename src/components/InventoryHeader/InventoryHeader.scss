@@ -12,10 +12,13 @@ input {
 }
 .inventory-header {
   @include flex(column, space-between, center);
-  padding: $padding-increment;
+  padding: $padding-mobile;
+  background-color: $global-white-color;
 
   &__title {
     font-family: $primary-font;
+    width: 100%;
+    padding-top: 0.5rem;
   }
 
   &__search {
@@ -25,7 +28,7 @@ input {
     border: 1px solid $outlines-dividers-borders-tablesorting-color;
     @include flex(row, space-between, center);
     padding: 4px $padding-increment;
-    margin: 0.5rem 1rem;
+    margin: $padding-mobile;
   }
 
   &__button {

@@ -1,5 +1,6 @@
 import InventoryHeader from "../InventoryHeader/InventoryHeader";
 import InventoryListItem from "../InventoryListItem/InventoryListItem";
+import "./InventoryList.scss";
 
 const InventoryList = () => {
   const inventoryItems = [
@@ -65,15 +66,17 @@ const InventoryList = () => {
   ];
 
   return (
-    <section className="inventory">
+    <section className="inventory-page">
       <InventoryHeader />
-      {inventoryItems.map((inventoryItem) => {
-        return (
-          <div className="inventory__item" key={inventoryItem.id}>
-            <InventoryListItem inventoryItem={inventoryItem} />
-          </div>
-        );
-      })}
+      <section className="inventory">
+        {inventoryItems.map((inventoryItem) => {
+          return (
+            <div className="inventory__item" key={inventoryItem.id}>
+              <InventoryListItem inventoryItem={inventoryItem} />
+            </div>
+          );
+        })}
+      </section>
     </section>
   );
 };

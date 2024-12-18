@@ -43,6 +43,26 @@
   line-height: 1rem;
 }
 
+@mixin out-of-stock-tag-mobile {
+  height: $tag-height-mobile;
+  padding: 0 $tag-width-padding;
+  background-color: rgba(201, 69, 21, 0.07);
+  color: $out-of-stock-label-color;
+  border-radius: $tag-border-radius;
+  border: none;
+  font-weight: 600;
+}
+
+@mixin in-stock-tag-mobile {
+  height: $tag-height-mobile;
+  padding: 0 $tag-width-padding;
+  background-color: rgba(21, 132, 104, 0.07);
+  color: $instock-label-color;
+  border-radius: $tag-border-radius;
+  border: none;
+  font-weight: 600;
+}
+
 @mixin table-header-tablet {
   font-size: 0.75rem;
   line-height: 1.125rem;

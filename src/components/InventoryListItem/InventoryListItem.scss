@@ -2,14 +2,42 @@
 @use "../../styles/partials/variables" as *;
 
 .inventory-list-item {
-  padding: $padding-increment;
+  padding: $padding-mobile;
+  border-top: 1px solid $outlines-dividers-borders-tablesorting-color;
+
+  &__section {
+    @include flex(row, flex-start, stretch);
+    width: 85%;
+  }
+
+  &__flex-left {
+    width: 60%;
+  }
 
   &__detail {
     @include body-medium-mobile;
+    padding-bottom: $padding-mobile;
 
     &--inventory {
       font-weight: 600;
       color: $interactive-elements-color;
     }
+  }
+
+  &__header {
+    padding-bottom: 4px;
+  }
+
+  &__tag {
+    @include out-of-stock-tag-mobile;
+    margin-bottom: $padding-mobile;
+
+    &--false {
+      @include in-stock-tag-mobile;
+    }
+  }
+
+  &__edit {
+    @include flex(row, space-between, center);
   }
 }
