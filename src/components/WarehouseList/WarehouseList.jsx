@@ -28,10 +28,12 @@ export default function WarehouseList({}) {
 		<section className="warehouse-list">
 			{warehouses.map((warehouse) => (
 				<div key={warehouses.id}>
-					<div className="warehouse-list__name">
-						<h3>WAREHOUSE</h3>
-						<p>{warehouse.warehouse_name}</p>
-						<img src={chevron} />
+					<div className="warehouse-list__names">
+						<h3 className="warehouse-list__title">WAREHOUSE</h3>
+						<div className="warehouse-wrapper">
+							<p className="warehouse-list__name">{warehouse.warehouse_name}</p>
+							<img className="warehouse-list__image" src={chevron} />
+						</div>
 					</div>
 					<div className="warehouse-list__address">
 						<h3>ADDRESS</h3>
