@@ -18,3 +18,12 @@
   justify-content: $justify;
   align-items: $align;
 }
+
+@mixin primary-button-styling-mobile {
+  height: $button-height-mobile;
+  //padding: $button-width-padding;
+  background-color: $interactive-elements-color;
+  color: $global-white-color;
+  border: none;
+  border-radius: $button-border-radius;
+}

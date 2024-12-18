@@ -1,0 +1,35 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+*::before,
+*,
+*::after {
+  box-sizing: border-box;
+}
+
+input {
+  border: none;
+}
+.inventory-header {
+  @include flex(column, space-between, center);
+  padding: $padding-increment;
+
+  &__title {
+    font-family: $primary-font;
+  }
+
+  &__search {
+    width: 100%;
+    height: $form-field-height-mobile;
+    border-radius: $form-border-radius;
+    border: 1px solid $outlines-dividers-borders-tablesorting-color;
+    @include flex(row, space-between, center);
+    padding: 4px $padding-increment;
+    margin: 0.5rem 1rem;
+  }
+
+  &__button {
+    @include primary-button-styling-mobile;
+    width: 100%;
+  }
+}
