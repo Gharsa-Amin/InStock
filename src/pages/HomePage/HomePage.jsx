@@ -1,7 +1,12 @@
 import React from "react";
+import WarehouseList from "../../components/WarehouseList/WarehouseList";
 
 const HomePage = () => {
-  return <div>HomePage</div>;
+	return (
+		<>
+			<WarehouseList />
+		</>
+	);
 };
 
 export default HomePage;
