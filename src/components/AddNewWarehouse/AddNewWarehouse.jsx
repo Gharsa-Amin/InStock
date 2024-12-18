@@ -21,76 +21,86 @@ export default function AddNewWarehouse() {
             Add New Warehouse
           </h1>
         </div>
-        <form action="">
-          <hr />
-          <div className="details">
-            <h2 className="warehouse__header">Warehouse Details</h2>
-            <div className="warehouse__info-wrapper">
-              <label className="warehouse__label">Warehouse Name</label>
-              <input
-                type="text"
-                className="warehouse__input"
-                placeholder="Warehouse Name"
-              />
+        <form className="new-warehouse__form">
+          <div className="new-warehouse__form-wrapper">
+            <div className="details details--warehouse">
+              <h2 className="warehouse__header">Warehouse Details</h2>
+              <div className="warehouse__info-wrapper">
+                <label className="warehouse__label">Warehouse Name</label>
+                <input
+                  type="text"
+                  className="warehouse__input"
+                  placeholder="Warehouse Name"
+                />
+              </div>
+              <div className="warehouse__info-wrapper">
+                <label className="warehouse__label">Street Address</label>
+                <input
+                  type="text"
+                  className="warehouse__input"
+                  placeholder="Street Address"
+                />
+              </div>
+              <div className="warehouse__info-wrapper">
+                <label className="warehouse__label">City</label>
+                <input
+                  type="text"
+                  className="warehouse__input"
+                  placeholder="City"
+                />
+              </div>
+              <div className="warehouse__info-wrapper">
+                <label className="warehouse__label">Country</label>
+                <input
+                  type="text"
+                  className="warehouse__input"
+                  placeholder="Country"
+                />
+              </div>
             </div>
-            <div className="warehouse__info-wrapper">
-              <label className="warehouse__label">Street Address</label>
-              <input
-                type="text"
-                className="warehouse__input"
-                placeholder="Street Address"
-              />
-            </div>
-            <div className="warehouse__info-wrapper">
-              <label className="warehouse__label">City</label>
-              <input
-                type="text"
-                className="warehouse__input"
-                placeholder="City"
-              />
-            </div>
-            <div className="warehouse__info-wrapper">
-              <label className="warehouse__label">Country</label>
-              <input
-                type="text"
-                className="warehouse__input"
-                placeholder="Country"
-              />
-            </div>
-          </div>
-          <hr />
-          <div className="details">
-            <h2 className="warehouse__header">Contact Details</h2>
-            <div className="warehouse__info-wrapper">
-              <label className="warehouse__label">Contact Name</label>
-              <input
-                type="text"
-                className="warehouse__input"
-                placeholder="Contact Name"
-              />
-            </div>
-            <div className="warehouse__info-wrapper">
-              <label className="warehouse__label">Position</label>
-              <input
-                type="text"
-                className="warehouse__input"
-                placeholder="Position"
-              />
-            </div>
-            <div className="warehouse__info-wrapper">
-              <label className="warehouse__label">Email</label>
-              <input
-                type="text"
-                className="warehouse__input"
-                placeholder="Email"
-              />
+            <div className="details">
+              <h2 className="warehouse__header">Contact Details</h2>
+              <div className="warehouse__info-wrapper">
+                <label className="warehouse__label">Contact Name</label>
+                <input
+                  type="text"
+                  className="warehouse__input"
+                  placeholder="Contact Name"
+                />
+              </div>
+              <div className="warehouse__info-wrapper">
+                <label className="warehouse__label">Position</label>
+                <input
+                  type="text"
+                  className="warehouse__input"
+                  placeholder="Position"
+                />
+              </div>
+              <div className="warehouse__info-wrapper">
+                <label className="warehouse__label">Phone Number</label>
+                <input
+                  type="text"
+                  className="warehouse__input"
+                  placeholder="Phone Number"
+                />
+              </div>
+              <div className="warehouse__info-wrapper">
+                <label className="warehouse__label">Email</label>
+                <input
+                  type="text"
+                  className="warehouse__input"
+                  placeholder="Email"
+                />
+              </div>
             </div>
           </div>
           <div className="buttons">
-            <button className="buttons__button cancel">Cancel</button>
-            <button className="buttons__button add-warehouse">
-              + Add Warehouse
-            </button>
+            <div className="buttons__wrapper">
+              <button className="buttons__button cancel">Cancel</button>
+              <button className="buttons__button add-warehouse">
+                + Add Warehouse
+              </button>
+            </div>
           </div>
         </form>
       </div>
