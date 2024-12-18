@@ -19,6 +19,10 @@
   align-items: $align;
 }
 
+// USING MIXIN W/ DEFAULT STYLING (example below)
+// @include flex(row, flex-start, stretch);
+// @include flex(column, flex-start, stretch);
+
 @mixin primary-button-styling-mobile {
   height: $button-height-mobile;
   //padding: $button-width-padding;

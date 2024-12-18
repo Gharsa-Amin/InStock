@@ -1,0 +1,52 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/mixins" as *;
+
+.header {
+  background-color: $nav-background-color;
+  height: 30vh;
+  width: 100vw;
+
+  &__wrapper {
+    height: 60%;
+    @include flex(column, space-between, center);
+    padding: 1.5rem $margin-mobile;
+
+    @include tablet {
+      @include flex(row, space-between, center);
+      padding: 1.5rem $margin-tablet;
+    }
+
+    @include desktop {
+      padding: 1.5rem $margin-desktop;
+    }
+  }
+
+  &__nav {
+    width: 100%;
+    @include flex(row, space-between, stretch);
+
+    @include tablet {
+      width: 25%;
+    }
+  }
+  &__nav-link {
+    width: 50%;
+    @include flex(row, center, center);
+
+    &.active {
+      background-color: $global-text-color;
+      height: $button-height-mobile;
+      padding: 0px $button-width-padding;
+      border-radius: $button-border-radius;
+    }
+  }
+
+  &__nav-text {
+    @include flex(row, center, center);
+  }
+}
+
+.link {
+  color: $global-white-color;
+}
