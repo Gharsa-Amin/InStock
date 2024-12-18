@@ -3,7 +3,9 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import React from "react";
-
+import chevron from "../../assets/icons/chevron_right-24px.svg";
+import remove from "../../assets/icons/delete_outline-24px.svg";
+import edit from "../../assets/icons/edit-24px.svg";
 export default function WarehouseList({}) {
 	const [warehouses, setWarehouses] = useState([]);
 
@@ -28,12 +30,14 @@ export default function WarehouseList({}) {
 					<div className="warehouse-list__name">
 						<h3>WAREHOUSE</h3>
 						<p>{warehouse.warehouse_name}</p>
+						<img src={chevron} />
 					</div>
 					<div className="warehouse-list__address">
 						<h3>ADDRESS</h3>
 						<p>{warehouse.address}</p>
 						<p>{warehouse.city}</p>
 						<p>{warehouse.country}</p>
+						<img src={remove} />
 					</div>
 					<div className="warehouse-list__contact">
 						<h3>CONTACT NAME</h3>
@@ -47,6 +51,7 @@ export default function WarehouseList({}) {
 						<div className="warehouse-list__email">
 							{warehouse.contact_email}
 						</div>
+						<img src={edit} alt="" />
 					</div>
 				</div>
 			))}
