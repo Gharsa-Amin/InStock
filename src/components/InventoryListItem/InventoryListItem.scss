@@ -1,0 +1,15 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.inventory-list-item {
+  padding: $padding-increment;
+
+  &__detail {
+    @include body-medium-mobile;
+
+    &--inventory {
+      font-weight: 600;
+      color: $interactive-elements-color;
+    }
+  }
+}

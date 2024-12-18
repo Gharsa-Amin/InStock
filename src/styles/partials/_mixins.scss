@@ -31,3 +31,19 @@
   border: none;
   border-radius: $button-border-radius;
 }
+
+//mobile text styles
+@mixin body-medium-mobile {
+  font-size: 0.813rem;
+  line-height: 1.25rem;
+}
+
+@mixin body-small-mobile {
+  font-size: 0.688rem;
+  line-height: 1rem;
+}
+
+@mixin table-header-tablet {
+  font-size: 0.75rem;
+  line-height: 1.125rem;
+}
