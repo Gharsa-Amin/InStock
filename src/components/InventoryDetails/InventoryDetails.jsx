@@ -1,16 +1,30 @@
 import "./InventoryDetails.scss";
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import axios from "axios";
 
 const InventoryDetails = () => {
-  const inventory = {
-    id: 1,
-    warehouse_name: "Manhattan",
-    item_name: "Television",
-    description:
-      'This 50", 4K LED TV provides a crystal-clear picture and vivid colors.',
-    category: "Electronics",
-    status: "In Stock",
-    quantity: 500,
-  };
+  const [inventory, setInventory] = useState(null);
+  const params = useParams();
+  const inventoryId = params.inventoryId;
+
+  useEffect(() => {
+    const url = `http://localhost:8080/api/inventories/${inventoryId}`;
+    console.log(url);
+    const fetchInventoryDetails = async () => {
+      try {
+        const response = await axios.get(url);
+        setInventory(response.data[0]);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+    fetchInventoryDetails();
+  }, [inventoryId]);
+
+  if (!inventory) {
+    return <>Loading inventory details...</>;
+  }
 
   return (
     <div className="inventory">

@@ -1,4 +1,5 @@
 import "./InventoryListItem.scss";
+import { Link } from "react-router-dom";
 
 const InventoryListItem = ({ inventoryItem }) => {
   return (
@@ -6,21 +7,27 @@ const InventoryListItem = ({ inventoryItem }) => {
       <div className="inventory-list-item__section">
         <div className="inventory-list-item__flex-left">
           <h4 className="inventory-list-item__header">INVENTORY ITEM</h4>
-          <p className="inventory-list-item__detail inventory-list-item__detail--inventory">
-            {inventoryItem.item_name}
-            <svg
-              width="15"
-              height="15"
-              viewBox="0 -2 17 20"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M9.99997 6L8.58997 7.41L13.17 12L8.58997 16.59L9.99997 18L16 12L9.99997 6Z"
-                fill="#2E66E6"
-              />
-            </svg>
-          </p>
+          <Link
+            to={`/inventory/${inventoryItem.id}`}
+            className="inventory-list-item__link"
+            key={inventoryItem.id}
+          >
+            <p className="inventory-list-item__detail inventory-list-item__detail--inventory">
+              {inventoryItem.item_name}
+              <svg
+                width="15"
+                height="15"
+                viewBox="0 -2 17 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M9.99997 6L8.58997 7.41L13.17 12L8.58997 16.59L9.99997 18L16 12L9.99997 6Z"
+                  fill="#2E66E6"
+                />
+              </svg>
+            </p>
+          </Link>
           <h4 className="inventory-list-item__header">CATEGORY</h4>
           <p className="inventory-list-item__detail">
             {inventoryItem.category}

@@ -14,12 +14,15 @@ function App() {
       <Header />
       {/* <AddNewWarehouse /> */}
       <Routes>
+        <Route
+          path="/inventory/:inventoryId"
+          element={<InventoryDetails />}
+        ></Route>
         {/* <Route path="/" element={<HomePage />} /> */}
         {/* <Route path="/warehouses/:id" element={<WarehouseDetails />} /> */}
         {/* MAKE NOT FOUND PAGE */}
       </Routes>
-      <InventoryDetails />
-      {/* <InventoryList /> */}
+      <InventoryList />
       <Footer />
     </BrowserRouter>
   );
