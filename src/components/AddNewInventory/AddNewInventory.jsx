@@ -201,7 +201,8 @@ export default function AddNewInventory({ onAddInventory, warehouses }) {
 									</p>
 								)}
 							</div>
-
+						</div>
+						<div className="details">
 							<div className="inventory__info-wrapper">
 								<label className="inventory__label">Status</label>
 
@@ -331,12 +332,13 @@ export default function AddNewInventory({ onAddInventory, warehouses }) {
 							</div>
 						</div>
 					</div>
-
 					<div className="buttons">
-						<button className="buttons__button cancel">Cancel</button>
-						<button type="submit" className="buttons__button add-inventory">
-							+ Add Item
-						</button>
+						<div className="buttons__wrapper">
+							<button className="buttons__button cancel">Cancel</button>
+							<button type="submit" className="buttons__button add-warehouse">
+								+ Add Warehouse
+							</button>
+						</div>
 					</div>
 				</form>
 			</div>
