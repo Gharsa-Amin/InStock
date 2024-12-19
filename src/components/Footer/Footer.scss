@@ -1,0 +1,9 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/mixins" as *;
+
+.footer {
+  @include flex(row, center, center);
+  color: $placeholder-text-color;
+  height: 200px;
+}
