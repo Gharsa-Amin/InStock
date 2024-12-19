@@ -32,7 +32,7 @@
   }
 }
 
-svg {
+.arrow-back {
   margin-right: $spacing-between-elements;
 }
 
@@ -56,7 +56,24 @@ svg {
     border-radius: $form-border-radius;
     height: $form-field-height-mobile;
     padding: 0px $form-padding-sides;
+
+    &:focus {
+      border: 1px solid $interactive-elements-color;
+    }
+
+    &.error {
+      border-color: $error-delete-color;
+    }
   }
+}
+.error-svg {
+  padding-right: $padding-increment;
+}
+
+.error-message {
+  color: $error-delete-color;
+  @include flex(row, flex-start, center);
+  font-size: $body-medium-mobile;
 }
 
 .details {
@@ -77,6 +94,11 @@ svg {
 .buttons {
   background-color: $page-background-color;
   @include flex(column, center, center);
+
+  @include tablet {
+    @include flex(column, center, flex-end);
+    padding-right: $spacing-between-elements * 2;
+  }
 
   &__wrapper {
     width: 90%;
