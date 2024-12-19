@@ -44,6 +44,7 @@
 
   &__header {
     padding-bottom: $spacing-between-elements * 2;
+    border-bottom: none;
   }
 
   &__label {
@@ -78,14 +79,12 @@
 
 .details {
   padding: 16px $form-padding-sides * 2;
-  border-top: solid 1px $outlines-dividers-borders-tablesorting-color;
 
   @include tablet {
     width: 50%;
     border-top: none;
 
     &--warehouse {
-      border-right: solid 1px $outlines-dividers-borders-tablesorting-color;
       width: 50%;
     }
   }
