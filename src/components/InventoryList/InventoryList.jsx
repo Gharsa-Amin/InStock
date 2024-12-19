@@ -6,64 +6,64 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 
 const InventoryList = () => {
-  const [inventories, setInventories] = useState([]);
+	const [inventories, setInventories] = useState([]);
 
-  useEffect(() => {
-    const url = "http://localhost:8080/api/inventories";
+	useEffect(() => {
+		const url = "http://localhost:8080/api/inventories";
 
-    async function fetchInventories() {
-      try {
-        const response = await axios.get(url);
-        setInventories(response.data);
-      } catch (error) {
-        console.error(error);
-      }
-    }
-    fetchInventories();
-  }, []);
+		async function fetchInventories() {
+			try {
+				const response = await axios.get(url);
+				setInventories(response.data);
+			} catch (error) {
+				console.error(error);
+			}
+		}
+		fetchInventories();
+	}, []);
 
-  return (
-    <section className="inventory-page">
-      <InventoryHeader />
-      <div className="inventory-nav">
-        <h4 className="inventory-nav__header">
-          INVENTORY ITEM
-          <SortSVG />
-        </h4>
-        <h4 className="inventory-nav__header">
-          CATEGORY
-          <SortSVG />
-        </h4>
-        <div className="inventory-nav__header inventory-nav__header--flex">
-          <h4 className="inventory-nav__header">
-            STATUS
-            <SortSVG />
-          </h4>
-          <h4 className="inventory-nav__header">
-            QTY
-            <SortSVG />
-          </h4>
-          <h4 className="inventory-nav__header">
-            WAREHOUSE
-            <SortSVG />
-          </h4>
-        </div>
-        <h4 className="inventory-nav__header inventory-nav__header--action ">
-          ACTIONS
-          <SortSVG />
-        </h4>
-      </div>
-      <section className="inventory">
-        {inventories.map((inventoryItem) => {
-          return (
-            <div className="inventory__item" key={inventoryItem.id}>
-              <InventoryListItem inventoryItem={inventoryItem} />
-            </div>
-          );
-        })}
-      </section>
-    </section>
-  );
+	return (
+		<section className="inventory-page">
+			<InventoryHeader />
+			<div className="inventory-nav">
+				<h4 className="inventory-nav__header">
+					INVENTORY ITEM
+					<SortSVG />
+				</h4>
+				<h4 className="inventory-nav__header">
+					CATEGORY
+					<SortSVG />
+				</h4>
+				<div className="inventory-nav__header inventory-nav__header--flex">
+					<h4 className="inventory-nav__header">
+						STATUS
+						<SortSVG />
+					</h4>
+					<h4 className="inventory-nav__header">
+						QTY
+						<SortSVG />
+					</h4>
+					<h4 className="inventory-nav__header">
+						WAREHOUSE
+						<SortSVG />
+					</h4>
+				</div>
+				<h4 className="inventory-nav__header inventory-nav__header--action ">
+					ACTIONS
+					<SortSVG />
+				</h4>
+			</div>
+			<section className="inventory">
+				{inventories.map((inventoryItem) => {
+					return (
+						<div className="inventory__item" key={inventoryItem.id}>
+							<InventoryListItem inventoryItem={inventoryItem} />
+						</div>
+					);
+				})}
+			</section>
+		</section>
+	);
 };
 
 export default InventoryList;
