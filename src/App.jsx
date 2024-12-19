@@ -12,25 +12,27 @@ import Footer from "./components/Footer/Footer";
 import WarehouseList from "./components/WarehouseList/WarehouseList";
 import InventoryHeader from "./components/WarehouseListHeader/WarehouseListHeader";
 import AddNewInventory from "./components/AddNewInventory/AddNewInventory";
+import DeleteInventoryItem from "./components/DeleteInventoryItem/DeleteInventoryItem";
 
 function App() {
-	return (
-		<BrowserRouter>
-			<Header />
-			<InventoryHeader />
-			<WarehouseList />
-			<AddNewWarehouse />
-			<AddNewInventory />
-			<Routes>
-				{/* <Route path="/" element={<HomePage />} /> */}
-				<Route path="/warehouses/:id" element={<WarehouseDetails />} />
-				{/* MAKE NOT FOUND PAGE */}
-			</Routes>
+  return (
+    <BrowserRouter>
+      <Header />
+      <DeleteInventoryItem />
+      <InventoryHeader />
+      <WarehouseList />
+      <AddNewWarehouse />
+      <AddNewInventory />
+      <Routes>
+        {/* <Route path="/" element={<HomePage />} /> */}
+        <Route path="/warehouses/:id" element={<WarehouseDetails />} />
+        {/* MAKE NOT FOUND PAGE */}
+      </Routes>
 
-			<InventoryList />
-			<Footer />
-		</BrowserRouter>
-	);
+      <InventoryList />
+      <Footer />
+    </BrowserRouter>
+  );
 }
 
 export default App;
