@@ -3,7 +3,7 @@ import "./InventoryListItem.scss";
 import SortSVG from "../SortSVG/SortSVG";
 
 const InventoryListItem = ({ inventoryItem }) => {
-  const [isInStock, setIsInStock] = useState("in Stock");
+  //const [isInStock, setIsInStock] = useState("in Stock");
 
   return (
     <section className="inventory-list-item">
@@ -36,9 +36,9 @@ const InventoryListItem = ({ inventoryItem }) => {
           <div className="inventory-list-item__tag-section">
             <button
               className={`inventory-list-item__tag ${
-                inventoryItem.status === "In Stock ?"
-                  ? "inventory-list-item__tag"
-                  : "inventory-list-item__tag"
+                inventoryItem.status === "In Stock"
+                  ? ""
+                  : "inventory-list-item__tag--false"
               }`}
             >
               {inventoryItem.status}
