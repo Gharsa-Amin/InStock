@@ -63,7 +63,7 @@
   }
 
   &__tag {
-    @include out-of-stock-tag-mobile;
+    @include in-stock-tag-mobile;
     margin-bottom: $padding-mobile;
 
     @include tablet {
@@ -73,7 +73,7 @@
     }
 
     &--false {
-      @include in-stock-tag-mobile;
+      @include out-of-stock-tag-mobile;
     }
   }
 
