@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./AddNewWarehouse.scss";
+import axios from "axios";
 
 export default function AddNewWarehouse() {
   const [warehouseName, setWarehouseName] = useState("");
@@ -29,8 +30,8 @@ export default function AddNewWarehouse() {
     setCountryError(!country);
     setContactNameError(!contactName);
     setPositionError(!position);
-    setPhoneNumberError(!phoneNumber);
-    setEmailError(!email);
+    setPhoneNumberError(!phoneNumber || phoneNumber.length !== 10);
+    setEmailError(!email || !email.includes("@"));
 
     if (
       !warehouseName ||
@@ -40,27 +41,41 @@ export default function AddNewWarehouse() {
       !contactName ||
       !position ||
       !phoneNumber ||
-      !email
+      phoneNumber.length !== 10 ||
+      !email ||
+      !email.includes("@")
     ) {
       return;
     }
-  };
 
-  const newWarehouseInfo = {
-    warehouseName,
-    streetAddress,
-    city,
-    country,
-    contactName,
-    position,
-    phoneNumber,
-    email,
+    const newWarehouseInfo = {
+      warehouse_name: warehouseName,
+      address: streetAddress,
+      city: city,
+      country: country,
+      contact_name: contactName,
+      contact_position: position,
+      contact_phone: phoneNumber,
+      contact_email: email,
+    };
+
+    const url = "http://localhost:8080/api/warehouses";
+
+    try {
+      await axios.post(url, newWarehouseInfo);
+
+      setWarehouseName("");
+      setStreetAddress("");
+      setCity("");
+      setCountry("");
+      setContactName("");
+      setPosition("");
+      setPhoneNumber("");
+      setEmail("");
+    } catch (error) {
+      console.error(error);
+    }
   };
-  //   try {
-  //     const saveformInfo = await axios.post(`${API_URL}/warehouses`, newWarehouseInfo);
-  //   } catch(error){
-  //     console.error(error);
-  //   }
 
   return (
     <div className="new-warehouse">
@@ -320,7 +335,7 @@ export default function AddNewWarehouse() {
                         fill="#C94515"
                       />
                     </svg>
-                    This field is required
+                    This field is required: must be a valid phone number
                   </p>
                 )}
               </div>
@@ -352,7 +367,7 @@ export default function AddNewWarehouse() {
                         fill="#C94515"
                       />
                     </svg>
-                    This field is required
+                    This field is required: must be a valid email
                   </p>
                 )}
               </div>
