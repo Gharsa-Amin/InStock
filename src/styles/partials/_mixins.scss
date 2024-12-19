@@ -1,31 +1,31 @@
 @use "./variables" as *;
 
 @mixin tablet {
-	@media (min-width: $tablet-breakpoint) {
-		@content;
-	}
+  @media (min-width: $tablet-breakpoint) {
+    @content;
+  }
 }
 
 @mixin desktop {
-	@media (min-width: $desktop-breakpoint) {
-		@content;
-	}
+  @media (min-width: $desktop-breakpoint) {
+    @content;
+  }
 }
 
 @mixin flex($direction, $justify, $align) {
-	display: flex;
-	flex-direction: $direction;
-	justify-content: $justify;
-	align-items: $align;
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
 }
 
 @mixin primary-button-styling-mobile {
-	height: $button-height-mobile;
-	//padding: $button-width-padding;
-	background-color: $interactive-elements-color;
-	color: $global-white-color;
-	border: none;
-	border-radius: $button-border-radius;
+  height: $button-height-mobile;
+  //padding: $button-width-padding;
+  background-color: $interactive-elements-color;
+  color: $global-white-color;
+  border: none;
+  border-radius: $button-border-radius;
 }
 // USING MIXIN W/ DEFAULT STYLING (example below)
 // @include flex(row, flex-start, stretch);
@@ -90,4 +90,9 @@
   color: $global-white-color;
   border: none;
   border-radius: $button-border-radius;
+}
+
+@mixin CTA-hover-button {
+  cursor: pointer;
+  background-color: $CTA-hover-button-color;
 }
