@@ -1,0 +1,56 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/mixins" as *;
+
+*::before,
+*,
+*::after {
+	box-sizing: border-box;
+}
+
+input {
+	border: none;
+}
+
+.inventory-header {
+	@include flex(column, space-between, center);
+	// padding: $padding-mobile;
+	background-color: $global-white-color;
+
+	@include tablet {
+		@include flex(row, space-between, center);
+	}
+
+	&__title {
+		font-family: $primary-font;
+		width: 100%;
+		padding-top: 0.5rem;
+
+		@include tablet {
+			flex: 2;
+		}
+	}
+
+	&__search {
+		width: 100%;
+		height: $form-field-height-mobile;
+		border-radius: $form-border-radius;
+		border: 1px solid $outlines-dividers-borders-tablesorting-color;
+		@include flex(row, space-between, center);
+		padding: 4px $padding-increment;
+		// margin: $padding-mobile;
+
+		@include tablet {
+			flex: 1;
+		}
+	}
+
+	&__button {
+		@include primary-button-styling-mobile;
+		width: 100%;
+
+		@include tablet {
+			flex: 1;
+		}
+	}
+}
