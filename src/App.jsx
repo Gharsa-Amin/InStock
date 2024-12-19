@@ -11,6 +11,7 @@ import InventoryList from "./components/InventoryList/InventoryList";
 import Footer from "./components/Footer/Footer";
 import WarehouseList from "./components/WarehouseList/WarehouseList";
 import InventoryHeader from "./components/WarehouseListHeader/WarehouseListHeader";
+import AddNewInventory from "./components/AddNewInventory/AddNewInventory";
 
 function App() {
 	return (
@@ -19,6 +20,7 @@ function App() {
 			<InventoryHeader />
 			<WarehouseList />
 			<AddNewWarehouse />
+			<AddNewInventory />
 			<Routes>
 				{/* <Route path="/" element={<HomePage />} /> */}
 				<Route path="/warehouses/:id" element={<WarehouseDetails />} />
