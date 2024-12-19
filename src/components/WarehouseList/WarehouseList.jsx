@@ -6,7 +6,6 @@ import React from "react";
 import chevron from "../../assets/icons/chevron_right-24px.svg";
 import remove from "../../assets/icons/delete_outline-24px.svg";
 import edit from "../../assets/icons/edit-24px.svg";
-import dropdown from "../../assets/icons/arrow_drop_down-24px.svg";
 
 export default function WarehouseList({}) {
 	const [warehouses, setWarehouses] = useState([]);
