@@ -2,7 +2,7 @@ import "./WarehouseDetails.scss";
 
 const WarehouseDetails = () => {
   return (
-    <>
+    <div className="warehouse">
       <header className="warehouse__header">
         <button className="warehouse__back-button">
           <svg
@@ -32,6 +32,7 @@ const WarehouseDetails = () => {
               fill="white"
             />
           </svg>
+          <span className="warehouse__edit-text">Edit</span>
         </button>
       </header>
 
@@ -55,7 +56,7 @@ const WarehouseDetails = () => {
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 };
 
