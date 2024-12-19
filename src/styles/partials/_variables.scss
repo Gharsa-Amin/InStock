@@ -18,7 +18,7 @@ $interactive-elements-color: #2e66e5;
 $global-white-color: #ffffff;
 
 // SECONDARY COLORS
-$table-column-header-color: #5c667e;
+$table-column-header-color: #5c667e; //SLATE
 $placeholder-text-color: #5c667e;
 $outlines-dividers-borders-tablesorting-color: #bdc5d5;
 
@@ -44,9 +44,14 @@ $margin-tablet: 1.5rem;
 $margin-desktop: auto;
 
 //PADDING
+
 $padding-increment: 8px;
 $h1-padding: 24px;
 $spacing-between-elements: 16px;
+
+$padding-increment: 0.5rem;
+$padding-mobile: 1rem;
+
 
 //BUTTONS
 $button-height-mobile: 36px;
