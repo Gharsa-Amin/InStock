@@ -33,15 +33,17 @@ const InventoryListItem = ({ inventoryItem }) => {
 
         <div className="inventory-list-item__flex-right">
           <h4 className="inventory-list-item__header">STATUS</h4>
-          <button
-            className={`inventory-list-item__tag ${
-              inventoryItem.status === "In Stock ?"
-                ? "inventory-list-item__tag"
-                : "inventory-list-item__tag"
-            }`}
-          >
-            {inventoryItem.status}
-          </button>
+          <div className="inventory-list-item__tag-section">
+            <button
+              className={`inventory-list-item__tag ${
+                inventoryItem.status === "In Stock ?"
+                  ? "inventory-list-item__tag"
+                  : "inventory-list-item__tag"
+              }`}
+            >
+              {inventoryItem.status}
+            </button>
+          </div>
           <h4 className="inventory-list-item__header">QTY</h4>
           <p className="inventory-list-item__detail">
             {inventoryItem.quantity}

@@ -4,6 +4,14 @@
 .inventory-page {
   background-color: $page-background-color;
   padding: $padding-mobile;
+
+  @include tablet {
+    padding: 2rem;
+  }
+
+  @include desktop {
+    padding: 2rem 8rem;
+  }
 }
 
 .inventory-nav {

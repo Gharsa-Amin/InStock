@@ -41,6 +41,7 @@
     @include tablet {
       flex: 1;
       width: 100%;
+      @include body-medium-tablet;
     }
 
     &--inventory {
@@ -57,13 +58,18 @@
     }
   }
 
+  &__tag-section {
+    flex: 1;
+  }
+
   &__tag {
     @include out-of-stock-tag-mobile;
     margin-bottom: $padding-mobile;
 
     @include tablet {
       flex: 1;
-      width: 100%;
+      max-width: 6rem;
+      @include body-medium-tablet;
     }
 
     &--false {
