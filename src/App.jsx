@@ -14,7 +14,7 @@ function App() {
   return (
     <BrowserRouter>
       <Header />
-      <AddNewWarehouse />
+      {/* <AddNewWarehouse /> */}
       <Routes>
         {/* <Route path="/" element={<HomePage />} /> */}
         <Route path="/warehouses/:id" element={<WarehouseDetails />} />
