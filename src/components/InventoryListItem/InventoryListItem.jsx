@@ -1,6 +1,4 @@
-import { useState } from "react";
 import "./InventoryListItem.scss";
-import SortSVG from "../SortSVG/SortSVG";
 
 const InventoryListItem = ({ inventoryItem }) => {
   return (
@@ -48,7 +46,7 @@ const InventoryListItem = ({ inventoryItem }) => {
           </p>
           <h4 className="inventory-list-item__header">WAREHOUSE</h4>
           <p className="inventory-list-item__detail">
-            {inventoryItem.warehouse_id}
+            {inventoryItem.warehouse_name}
           </p>
         </div>
       </div>
@@ -79,8 +77,6 @@ const InventoryListItem = ({ inventoryItem }) => {
           />
         </svg>
       </div>
-
-      {/* how do i hide the header component? */}
     </section>
   );
 };
