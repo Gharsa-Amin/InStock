@@ -50,6 +50,11 @@
     }
   }
 
+  &__link {
+    flex: 1;
+    text-decoration: none;
+  }
+
   &__header {
     padding-bottom: 4px;
 
