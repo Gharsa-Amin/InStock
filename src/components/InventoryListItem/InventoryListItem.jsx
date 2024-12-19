@@ -3,8 +3,6 @@ import "./InventoryListItem.scss";
 import SortSVG from "../SortSVG/SortSVG";
 
 const InventoryListItem = ({ inventoryItem }) => {
-  //const [isInStock, setIsInStock] = useState("in Stock");
-
   return (
     <section className="inventory-list-item">
       <div className="inventory-list-item__section">
