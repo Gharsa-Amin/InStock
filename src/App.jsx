@@ -9,22 +9,26 @@ import AddNewWarehouse from "./components/AddNewWarehouse/AddNewWarehouse";
 import InventoryList from "./components/InventoryList/InventoryList";
 
 import Footer from "./components/Footer/Footer";
+import WarehouseList from "./components/WarehouseList/WarehouseList";
+import InventoryHeader from "./components/WarehouseListHeader/WarehouseListHeader";
 
 function App() {
-  return (
-    <BrowserRouter>
-      <Header />
-      <AddNewWarehouse />
-      <Routes>
-        {/* <Route path="/" element={<HomePage />} /> */}
-        <Route path="/warehouses/:id" element={<WarehouseDetails />} />
-        {/* MAKE NOT FOUND PAGE */}
-      </Routes>
+	return (
+		<BrowserRouter>
+			<Header />
+			<InventoryHeader />
+			<WarehouseList />
+			<AddNewWarehouse />
+			<Routes>
+				{/* <Route path="/" element={<HomePage />} /> */}
+				<Route path="/warehouses/:id" element={<WarehouseDetails />} />
+				{/* MAKE NOT FOUND PAGE */}
+			</Routes>
 
-      <InventoryList />
-      <Footer />
-    </BrowserRouter>
-  );
+			<InventoryList />
+			<Footer />
+		</BrowserRouter>
+	);
 }
 
 export default App;
