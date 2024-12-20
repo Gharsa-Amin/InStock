@@ -7,11 +7,11 @@ import AddNewWarehouse from "./components/AddNewWarehouse/AddNewWarehouse";
 import Footer from "./components/Footer/Footer";
 import InventoryDetails from "./components/InventoryDetails/InventoryDetails";
 import InventoryPage from "./pages/InventoryPage/IventoryPage";
+import AddNewInventory from "./components/AddNewInventory/AddNewInventory";
 
 /* MAKE NOT FOUND PAGE */
 
 function App() {
-
   return (
     <BrowserRouter>
       <Header />
@@ -24,7 +24,7 @@ function App() {
         ></Route>
         <Route path="/addWarehouses" element={<AddNewWarehouse />}></Route>
         <Route path="/warehouses/:id" element={<WarehouseDetails />} />
-         <Route path="/addinventories" element={<AddNewInventory />}></Route>
+        <Route path="/addinventories" element={<AddNewInventory />}></Route>
       </Routes>
       <Footer />
     </BrowserRouter>
