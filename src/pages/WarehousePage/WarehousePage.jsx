@@ -2,10 +2,10 @@ import WarehouseListHeader from "../../components/WarehouseListHeader/WarehouseL
 import WarehouseList from "../../components/WarehouseList/WarehouseList";
 
 export default function WarehousePage() {
-  return (
-    <>
-      <WarehouseListHeader />
-      <WarehouseList />
-    </>
-  );
+	return (
+		<>
+			<WarehouseListHeader />
+			<WarehouseList />
+		</>
+	);
 }

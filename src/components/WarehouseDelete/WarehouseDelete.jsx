@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-export default function WarehouseDelete() {
+export default function WarehouseDelete(
+	closeModal,
+	isModalOpen,
+	setisModalOpen
+) {
 	const [warehouses, setWarehouses] = useState([]);
 	const [showModal, setShowModal] = useState(false);
 	const [selectedWarehouseId, setSelectedWarehouseId] = useState(null);
@@ -48,7 +52,7 @@ export default function WarehouseDelete() {
 				{warehouses.map((warehouse) => (
 					<li key={warehouse.id}>
 						<div>{warehouse.warehouse_name}</div>
-						<button onClick={() => confirmDelete(warehouse.id)}>Delete</button>
+						<button onClick={() => confirmDelete(handleDelete)}>Delete</button>
 					</li>
 				))}
 			</ul>
@@ -64,7 +68,7 @@ export default function WarehouseDelete() {
 						<button onClick={() => handleDelete(selectedWarehouseId)}>
 							Yes, delete
 						</button>
-						<button onClick={handleCancel}>Cancel</button>
+						<button onClick={closeModal}>Cancel</button>
 					</div>
 				</div>
 			)}

@@ -11,6 +11,7 @@ import InventoryPage from "./pages/InventoryPage/IventoryPage";
 /* MAKE NOT FOUND PAGE */
 
 function App() {
+
   return (
     <BrowserRouter>
       <Header />
@@ -23,6 +24,7 @@ function App() {
         ></Route>
         <Route path="/addWarehouses" element={<AddNewWarehouse />}></Route>
         <Route path="/warehouses/:id" element={<WarehouseDetails />} />
+         <Route path="/addinventories" element={<AddNewInventory />}></Route>
       </Routes>
       <Footer />
     </BrowserRouter>
