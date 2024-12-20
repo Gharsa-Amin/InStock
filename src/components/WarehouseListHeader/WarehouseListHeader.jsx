@@ -1,11 +1,11 @@
 import "./WarehouseListHeader.scss";
 import { Link } from "react-router-dom";
 
-const InventoryHeader = () => {
+const WarehouseListHeader = () => {
   return (
-    <section className="inventory-header">
-      <h1 className="inventory-header__title">Warehouses</h1>
-      <div className="inventory-header__search">
+    <section className="warehouse-header">
+      <h1 className="warehouse-header__title">Warehouses</h1>
+      <div className="warehouse-header__search">
         <input type="text" placeholder="Search..." />
         <svg
           width="24"
@@ -21,9 +21,9 @@ const InventoryHeader = () => {
         </svg>
       </div>
       <Link to="/addWarehouses">
-        <button className="inventory-header__button">+ Add New Item</button>
+        <button className="warehouse-header__button">+ Add New Item</button>
       </Link>
     </section>
   );
 };
-export default InventoryHeader;
+export default WarehouseListHeader;
