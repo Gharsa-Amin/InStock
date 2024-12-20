@@ -1,14 +1,11 @@
-import React from "react";
-import WarehouseList from "../../components/WarehouseList/WarehouseList";
 import WarehouseListHeader from "../../components/WarehouseListHeader/WarehouseListHeader";
+import WarehouseList from "../../components/WarehouseList/WarehouseList";
 
-const HomePage = () => {
+export default function WarehousePage() {
   return (
     <>
       <WarehouseListHeader />
       <WarehouseList />
     </>
   );
-};
-
-export default HomePage;
+}

@@ -51,7 +51,7 @@ const InventoryList = () => {
           item={selectedItem}
           handleClose={closeModal}
           handleDelete={() => handleDelete(selectedItem.id)}
-        />
+        />h
       )}
       <InventoryHeader />
       <div className="inventory-nav">
