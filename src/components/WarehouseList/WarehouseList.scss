@@ -150,6 +150,7 @@ body {
 		display: flex;
 		height: 24px;
 		width: 24px;
+		justify-self: flex-end;
 	}
 }
 .wrapper-item {
@@ -167,5 +168,12 @@ body {
 .warehouse-list__contact {
 	@include tablet {
 		width: 20%;
+	}
+}
+.warehouse-list__imageTablet {
+	display: none;
+	@include tablet {
+		display: flex;
+		margin-left: 0.5rem;
 	}
 }

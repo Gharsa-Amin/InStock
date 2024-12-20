@@ -113,6 +113,7 @@ export default function WarehouseList({}) {
 								<p className="warehouse-list__name">
 									{warehouse.warehouse_name}
 								</p>
+								<img className="warehouse-list__imageTablet" src={chevron} />
 								<img className="warehouse-list__image" src={chevron} />
 							</div>
 						</div>
