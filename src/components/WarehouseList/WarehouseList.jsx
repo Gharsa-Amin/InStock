@@ -10,6 +10,7 @@ import WarehouseListHeader from "../WarehouseListHeader/WarehouseListHeader";
 import SortSVG from "../SortSVG/SortSVG";
 import WarehouseDelete from "../WarehouseDelete/WarehouseDelete";
 
+
 export default function WarehouseList() {
 	const [warehouses, setWarehouses] = useState([]);
 	const [selectedWarehouse, setSelectedWarehouse] = useState(null);
@@ -19,16 +20,17 @@ export default function WarehouseList() {
 		setisModalOpen(true);
 	};
 
-	const closeModal = () => {
-		setSelectedWarehouse(null);
-		setisModalOpen(false);
-	};
-	useEffect(() => {
-		const fetchWarehouses = async () => {
-			const URL = "http://localhost:8080/api/warehouses";
-			try {
-				const response = await axios.get(URL);
-				console.log(response.data);
+
+  const closeModal = () => {
+    setSelectedWarehouse(null);
+    setisModalOpen(false);
+  };
+  useEffect(() => {
+    const fetchWarehouses = async () => {
+      const URL = "http://localhost:8080/api/warehouses";
+      try {
+        const response = await axios.get(URL);
+        console.log(response.data);
 
 				setWarehouses(response.data);
 			} catch (error) {
