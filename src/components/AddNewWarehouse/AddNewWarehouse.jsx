@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./AddNewWarehouse.scss";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 export default function AddNewWarehouse() {
   const [warehouseName, setWarehouseName] = useState("");
@@ -82,19 +83,21 @@ export default function AddNewWarehouse() {
       <div className="new-warehouse__wrapper">
         <div className="header-wrapper">
           <h1 className="h1">
-            <svg
-              className="arrow-back"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M20 11H7.83L13.42 5.41L12 4L4 12L12 20L13.41 18.59L7.83 13H20V11Z"
-                fill="#2E66E6"
-              />
-            </svg>
+            <Link to="/">
+              <svg
+                className="arrow-back"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M20 11H7.83L13.42 5.41L12 4L4 12L12 20L13.41 18.59L7.83 13H20V11Z"
+                  fill="#2E66E6"
+                />
+              </svg>
+            </Link>
             Add New Warehouse
           </h1>
         </div>
@@ -375,7 +378,9 @@ export default function AddNewWarehouse() {
           </div>
           <div className="buttons">
             <div className="buttons__wrapper">
-              <button className="buttons__button cancel">Cancel</button>
+              <Link to="/">
+                <button className="buttons__button cancel">Cancel</button>
+              </Link>
               <button type="submit" className="buttons__button add-warehouse">
                 + Add Warehouse
               </button>
