@@ -6,7 +6,7 @@ const WarehouseDetails = () => {
   const { id } = useParams();
 
   const handleBackClick = () => {
-    navigate("/warehouses");
+    navigate("/");
   };
 
   const handleEditClick = () => {
