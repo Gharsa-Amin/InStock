@@ -5,10 +5,10 @@ import Header from "./components/Header/Header";
 import WarehouseDetails from "./components/WarehouseDetails/WarehouseDetails";
 import AddNewWarehouse from "./components/AddNewWarehouse/AddNewWarehouse";
 import Footer from "./components/Footer/Footer";
-import InventoryHeader from "./components/WarehouseListHeader/WarehouseListHeader";
 import AddNewInventory from "./components/AddNewInventory/AddNewInventory";
 import InventoryDetails from "./components/InventoryDetails/InventoryDetails";
 import InventoryPage from "./pages/InventoryPage/IventoryPage";
+import WarehouseEdit from "./components/WarehouseEdit/WarehouseEdit";
 
 function App() {
   return (
@@ -23,6 +23,7 @@ function App() {
           element={<InventoryDetails />}
         ></Route>
         <Route path="/addWarehouses" element={<AddNewWarehouse />}></Route>
+        <Route path="/editWarehouse/:id" element={<WarehouseEdit />}></Route>
         <Route path="/warehouses/:id" element={<WarehouseDetails />} />
         {/* MAKE NOT FOUND PAGE */}
       </Routes>
