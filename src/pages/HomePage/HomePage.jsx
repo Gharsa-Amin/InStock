@@ -3,12 +3,7 @@ import WarehouseList from "../../components/WarehouseList/WarehouseList";
 import WarehouseListHeader from "../../components/WarehouseListHeader/WarehouseListHeader";
 
 const HomePage = () => {
-	return (
-		<>
-			{/* <WarehouseListHeader />
-			<WarehouseList /> */}
-		</>
-	);
+	return <></>;
 };
 
 export default HomePage;
