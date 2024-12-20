@@ -51,9 +51,9 @@ const WarehouseInventory = () => {
           <SortSVG />
         </h4>
       </div>
-      <section className="inventory">
+      <section className="warehouse-stock">
         {inventories.map((inventoryItem) => (
-          <div className="inventory__item" key={inventoryItem.id}>
+          <div className="inventory__stock-item" key={inventoryItem.id}>
             <WarehouseItems inventoryItem={inventoryItem} />
           </div>
         ))}
