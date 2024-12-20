@@ -65,7 +65,7 @@ export default function Header() {
             <h3 className="header__nav-text">Warehouses</h3>
           </Link>
           <Link
-            to="/"
+            to="/inventory"
             className={`header__nav-link link ${
               activeNav === "inventory" ? "active" : ""
             }`}

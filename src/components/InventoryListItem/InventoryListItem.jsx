@@ -1,7 +1,7 @@
 import "./InventoryListItem.scss";
 import { Link } from "react-router-dom";
 
-const InventoryListItem = ({ inventoryItem }) => {
+const InventoryListItem = ({ inventoryItem, openModal }) => {
   return (
     <section className="inventory-list-item">
       <div className="inventory-list-item__section">
@@ -60,6 +60,7 @@ const InventoryListItem = ({ inventoryItem }) => {
 
       <div className="inventory-list-item__edit">
         <svg
+          onClick={() => openModal(inventoryItem)}
           width="24"
           height="24"
           viewBox="0 0 24 24"
