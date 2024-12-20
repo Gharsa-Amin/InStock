@@ -37,6 +37,7 @@ function App() {
       </Routes>
       {/* <InventoryList /> */}
       <Footer />
+      {/* test comment  */}
     </BrowserRouter>
   );
 }
