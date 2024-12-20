@@ -16,7 +16,6 @@ import WarehouseInventory from "./components/WarehouseInventory/WarehouseInvento
 import WarehouseEdit from "./components/WarehouseEdit/WarehouseEdit";
 
 function App() {
-
   return (
     <BrowserRouter>
       <Header />
@@ -35,7 +34,6 @@ function App() {
       <Footer />
     </BrowserRouter>
   );
-
 }
 
 export default App;
