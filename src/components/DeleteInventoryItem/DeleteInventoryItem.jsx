@@ -6,7 +6,6 @@ export default function DeleteInventoryItem({
   handleClose,
   handleDelete,
 }) {
-  console.log(item);
   return (
     <div className="modal-backdrop">
       <div className="modal">
@@ -25,14 +24,16 @@ export default function DeleteInventoryItem({
             />
           </svg>
         </div>
-        <div className="modal_content">
-          <h1 className="modal__header">
-            Delete {item.item_name} inventory item?
-          </h1>
-          <p>
-            Please confirm that you would like to delete {item.item_name} from
-            the inventory list. You won't be able to undo this action.
-          </p>
+        <div className="modal__content">
+          <div className="modal__content-wrapper">
+            <h1 className="modal__header">
+              Delete {item.item_name} inventory item?
+            </h1>
+            <p className="modal__text">
+              Please confirm that you would like to delete {item.item_name} from
+              the inventory list. You won't be able to undo this action.
+            </p>
+          </div>
           <div className="modal-buttons">
             <button onClick={handleClose} className="modal-buttons__cancel">
               Cancel
