@@ -10,7 +10,7 @@ import WarehouseListHeader from "../WarehouseListHeader/WarehouseListHeader";
 import SortSVG from "../SortSVG/SortSVG";
 import WarehouseDelete from "../WarehouseDelete/WarehouseDelete";
 
-export default function WarehouseList({}) {
+export default function WarehouseList() {
 	const [warehouses, setWarehouses] = useState([]);
 	const [selectedWarehouse, setSelectedWarehouse] = useState(null);
 	const [isModalOpen, setisModalOpen] = useState(false);
@@ -37,19 +37,6 @@ export default function WarehouseList({}) {
 		};
 		fetchWarehouses();
 	}, []);
-	// const handleDelete = async (warehouseId) => {
-	// 	try {
-	// 		const URL = `http://localhost:8080/api/warehouses/${warehouseId}`;
-	// 		await axios.delete(URL);
-
-	// 		setWarehouses((prev) =>
-	// 			prev.filter((warehouse) => warehouse.id !== warehouseId)
-	// 		);
-	// 		setSelectedWarehouse(null);
-	// 	} catch (error) {
-	// 		console.error("Error deleting inventory item:", error);
-	// 	}
-	// };
 
 	return (
 		<>
@@ -147,8 +134,6 @@ export default function WarehouseList({}) {
 								<h3 className="warehouse-list__contact-name">CONTACT NAME</h3>
 								<div className="warehouse-name">{warehouse.contact_name}</div>
 							</div>
-							{/* </div> */}
-							{/* <div className="bottom-wrapper"> */}
 							<div className="wrapper-item">
 								<div className="warehouse-list__address">
 									<h3 className="warehouse-list__address-title">ADDRESS</h3>
@@ -187,7 +172,7 @@ export default function WarehouseList({}) {
 								<div className="warehouse-actions">
 									<img
 										className="warehouse-list__image-tablet"
-										onClick={openModal}
+										onClick={() => openModal(warehouse)}
 										src={remove}
 									/>
 									<img
@@ -205,9 +190,11 @@ export default function WarehouseList({}) {
 
 			{isModalOpen ? (
 				<WarehouseDelete
+					setWarehouses={setWarehouses}
 					closeModal={closeModal}
 					isModalOpen={isModalOpen}
 					setisModalOpen={setisModalOpen}
+					warehouse={selectedWarehouse}
 				/>
 			) : (
 				""
