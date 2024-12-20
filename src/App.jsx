@@ -9,7 +9,6 @@ import Footer from "./components/Footer/Footer";
 import AddNewInventory from "./components/AddNewInventory/AddNewInventory";
 import InventoryDetails from "./components/InventoryDetails/InventoryDetails";
 import InventoryPage from "./pages/InventoryPage/IventoryPage";
-import AddNewInventory from "./components/AddNewInventory/AddNewInventory";
 
 /* MAKE NOT FOUND PAGE */
 import WarehouseEdit from "./components/WarehouseEdit/WarehouseEdit";
@@ -28,6 +27,7 @@ function App() {
         <Route path="/addWarehouses" element={<AddNewWarehouse />}></Route>
         <Route path="/warehouses/:id" element={<WarehouseDetailsPage />} />
         <Route path="/addinventories" element={<AddNewInventory />}></Route>
+        <Route path="/editWarehouses/:id" element={<WarehouseEdit />}></Route>
       </Routes>
       <Footer />
     </BrowserRouter>

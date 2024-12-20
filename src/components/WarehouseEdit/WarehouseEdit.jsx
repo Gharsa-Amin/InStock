@@ -7,6 +7,7 @@ import axios from "axios";
 const WarehouseEdit = () => {
   const [warehouse, setWarehouse] = useState([]);
   const { id } = useParams();
+
   const [warehouseName, setWarehouseName] = useState("");
   const [warehouseNameError, setWarehouseNameError] = useState(false);
   const [streetAddress, setStreetAddress] = useState("");
