@@ -2,25 +2,19 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.scss";
 import WarehousePage from "./pages/WarehousePage/WarehousePage";
 import Header from "./components/Header/Header";
-import WarehouseDetails from "./components/WarehouseDetails/WarehouseDetails";
-import HomePage from "./pages/HomePage/HomePage";
-import WarehouseInventoryList from "./components/WarehouseInventory/WarehouseInventory";
 import WarehouseDetailsPage from "./pages/WarehouseDetailsPage/WarehouseDetailsPage";
-
 import AddNewWarehouse from "./components/AddNewWarehouse/AddNewWarehouse";
 import Footer from "./components/Footer/Footer";
-import InventoryHeader from "./components/WarehouseListHeader/WarehouseListHeader";
-import AddNewInventory from "./components/AddNewInventory/AddNewInventory";
 import InventoryDetails from "./components/InventoryDetails/InventoryDetails";
-import DeleteInventoryItem from "./components/DeleteInventoryItem/DeleteInventoryItem";
 import InventoryPage from "./pages/InventoryPage/IventoryPage";
-import WarehouseDetailsPage from "./pages/WarehouseDetailsPage/WarehouseDetailsPage";
+import AddNewInventory from "./components/AddNewInventory/AddNewInventory";
+
+/* MAKE NOT FOUND PAGE */
 
 function App() {
   return (
     <BrowserRouter>
       <Header />
-      {/* <AddNewInventory /> */}
       <Routes>
         <Route path="/" element={<WarehousePage />}></Route>
         <Route path="/inventory" element={<InventoryPage />}></Route>
@@ -29,8 +23,8 @@ function App() {
           element={<InventoryDetails />}
         ></Route>
         <Route path="/addWarehouses" element={<AddNewWarehouse />}></Route>
-        <Route path="/warehouses/:id" element={<WarehouseDetails />} />
-        {/* MAKE NOT FOUND PAGE */}
+        <Route path="/warehouses/:id" element={<WarehouseDetailsPage />} />
+        <Route path="/addinventories" element={<AddNewInventory />}></Route>
       </Routes>
       <Footer />
     </BrowserRouter>

@@ -12,7 +12,6 @@ import SortSVG from "../SortSVG/SortSVG";
 export default function WarehouseList({}) {
   const [warehouses, setWarehouses] = useState([]);
 
-
   useEffect(() => {
     const fetchWarehouses = async () => {
       const URL = "http://localhost:8080/api/warehouses";
@@ -112,9 +111,11 @@ export default function WarehouseList({}) {
             <div className="warehouse-list__names">
               <h3 className="warehouse-list__title">WAREHOUSE</h3>
               <div className="warehouse-wrapper">
-                <p className="warehouse-list__name">
-                  {warehouse.warehouse_name}
-                </p>
+                <Link to={`/warehouses/${warehouse.id}`}>
+                  <p className="warehouse-list__name">
+                    {warehouse.warehouse_name}
+                  </p>
+                </Link>
                 <img className="warehouse-list__image" src={chevron} />
               </div>
             </div>
@@ -172,5 +173,4 @@ export default function WarehouseList({}) {
       ))}
     </section>
   );
-
 }
