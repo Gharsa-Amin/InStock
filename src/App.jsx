@@ -8,6 +8,7 @@ import Footer from "./components/Footer/Footer";
 import InventoryHeader from "./components/WarehouseListHeader/WarehouseListHeader";
 import AddNewInventory from "./components/AddNewInventory/AddNewInventory";
 import InventoryDetails from "./components/InventoryDetails/InventoryDetails";
+import DeleteInventoryItem from "./components/DeleteInventoryItem/DeleteInventoryItem";
 import InventoryPage from "./pages/InventoryPage/IventoryPage";
 
 function App() {
