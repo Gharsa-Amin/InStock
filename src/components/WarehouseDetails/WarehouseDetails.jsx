@@ -1,10 +1,21 @@
 import "./WarehouseDetails.scss";
+import { useNavigate, useParams } from "react-router-dom";
 
 const WarehouseDetails = () => {
+  const navigate = useNavigate();
+  const { id } = useParams();
+
+  const handleBackClick = () => {
+    navigate("/warehouses");
+  };
+
+  const handleEditClick = () => {
+    navigate(`/warehouses/${id}/edit`);
+  };
   return (
     <div className="warehouse">
       <header className="warehouse__header">
-        <button className="warehouse__back-button">
+        <button className="warehouse__back-button" onClick={handleBackClick}>
           <svg
             width="24"
             height="24"
@@ -19,7 +30,7 @@ const WarehouseDetails = () => {
           </svg>
         </button>
         <span className="warehouse__title">Washington</span>
-        <button className="warehouse__edit-button">
+        <button className="warehouse__edit-button" onClick={handleEditClick}>
           <svg
             width="24"
             height="24"
