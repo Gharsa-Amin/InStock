@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import "./AddNewInventory.scss";
+import axios from "axios";
 
 export default function AddNewInventory({ onAddInventory, warehouses }) {
 	const [inventoryName, setInventoryName] = useState("");
@@ -8,6 +9,7 @@ export default function AddNewInventory({ onAddInventory, warehouses }) {
 	const [inStock, setInStock] = useState(true);
 	const [quantity, setQuantity] = useState("");
 	const [warehouse, setWarehouse] = useState("");
+
 	const [inventoryNameError, setInventoryNameError] = useState(false);
 	const [descriptionError, setDescriptionError] = useState(false);
 	const [categoryError, setCategoryError] = useState(false);
@@ -42,19 +44,18 @@ export default function AddNewInventory({ onAddInventory, warehouses }) {
 		}
 
 		const newInventory = {
-			inventoryName,
-			description,
-			category,
-			inStock,
-			quantity: inStock === "In Stock" ? quantity : 0,
-			warehouse: warehouse,
+			warehouse_id: warehouse,
+			item_name: inventoryName,
+			description: description,
+			category: category,
+			status: inStock ? "In Stock" : "Out of Stock",
+			quantity: inStock ? quantity : 0,
 		};
 
+		const url = "http://localhost:8080/api/inventories";
 		try {
-			// Assume there's a backend API to handle this request
-			// const response = await axios.post(`${API_URL}/inventory`, newInventory);
-			// Simulate the successful response:
-			onAddInventory(newInventory); // Add new inventory to the list
+			await axios.post(url, newInventory);
+			onAddInventory(newInventory);
 
 			setInventoryName("");
 			setDescription("");
