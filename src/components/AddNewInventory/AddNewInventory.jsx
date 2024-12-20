@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import "./AddNewInventory.scss";
 import axios from "axios";
 
-export default function AddNewInventory({ onAddInventory, warehouses }) {
+export default function AddNewInventory() {
 	const [inventoryName, setInventoryName] = useState("");
 	const [description, setDescription] = useState("");
 	const [category, setCategory] = useState("");
@@ -40,6 +40,7 @@ export default function AddNewInventory({ onAddInventory, warehouses }) {
 			!inStock ||
 			(inStock === "In Stock" && (!quantity || !warehouse))
 		) {
+			console.log("test");
 			return;
 		}
 
@@ -55,8 +56,8 @@ export default function AddNewInventory({ onAddInventory, warehouses }) {
 		const url = "http://localhost:8080/api/inventories";
 		try {
 			await axios.post(url, newInventory);
-			onAddInventory(newInventory);
-
+			// onAddInventory(newInventory);
+			console.log("test");
 			setInventoryName("");
 			setDescription("");
 			setCategory("");
@@ -67,6 +68,22 @@ export default function AddNewInventory({ onAddInventory, warehouses }) {
 			console.error("Failed to add inventory", error);
 		}
 	};
+
+	const [warehouses, setWarehouses] = useState([]);
+
+	useEffect(() => {
+		const fetchWarehouses = async () => {
+			const URL = "http://localhost:8080/api/warehouses";
+			try {
+				const response = await axios.get(URL);
+				console.log(response.data);
+				setWarehouses(response.data);
+			} catch (error) {
+				console.error(error);
+			}
+		};
+		fetchWarehouses();
+	}, []);
 
 	return (
 		<div className="new-inventory">
@@ -323,7 +340,7 @@ export default function AddNewInventory({ onAddInventory, warehouses }) {
 									{warehouses && warehouses.length > 0 ? (
 										warehouses.map((wh) => (
 											<option key={wh.id} value={wh.id}>
-												{wh.name}
+												{wh.warehouse_name}
 											</option>
 										))
 									) : (
