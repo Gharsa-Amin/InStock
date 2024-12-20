@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import "./AddNewInventory.scss";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
-export default function AddNewInventory({ onAddInventory, warehouses }) {
+export default function AddNewInventory() {
 	const [inventoryName, setInventoryName] = useState("");
 	const [description, setDescription] = useState("");
 	const [category, setCategory] = useState("");
@@ -40,6 +41,7 @@ export default function AddNewInventory({ onAddInventory, warehouses }) {
 			!inStock ||
 			(inStock === "In Stock" && (!quantity || !warehouse))
 		) {
+			console.log("test");
 			return;
 		}
 
@@ -55,8 +57,8 @@ export default function AddNewInventory({ onAddInventory, warehouses }) {
 		const url = "http://localhost:8080/api/inventories";
 		try {
 			await axios.post(url, newInventory);
-			onAddInventory(newInventory);
-
+			// onAddInventory(newInventory);
+			console.log("test");
 			setInventoryName("");
 			setDescription("");
 			setCategory("");
@@ -68,24 +70,42 @@ export default function AddNewInventory({ onAddInventory, warehouses }) {
 		}
 	};
 
+	const [warehouses, setWarehouses] = useState([]);
+
+	useEffect(() => {
+		const fetchWarehouses = async () => {
+			const URL = "http://localhost:8080/api/warehouses";
+			try {
+				const response = await axios.get(URL);
+				console.log(response.data);
+				setWarehouses(response.data);
+			} catch (error) {
+				console.error(error);
+			}
+		};
+		fetchWarehouses();
+	}, []);
+
 	return (
 		<div className="new-inventory">
 			<div className="new-inventory__wrapper">
 				<div className="header-wrapper">
 					<h1 className="h1">
-						<svg
-							className="arrow-back"
-							width="24"
-							height="24"
-							viewBox="0 0 24 24"
-							fill="none"
-							xmlns="http://www.w3.org/2000/svg"
-						>
-							<path
-								d="M20 11H7.83L13.42 5.41L12 4L4 12L12 20L13.41 18.59L7.83 13H20V11Z"
-								fill="#2E66E6"
-							/>
-						</svg>
+						<Link to="/inventory">
+							<svg
+								className="arrow-back"
+								width="24"
+								height="24"
+								viewBox="0 0 24 24"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg"
+							>
+								<path
+									d="M20 11H7.83L13.42 5.41L12 4L4 12L12 20L13.41 18.59L7.83 13H20V11Z"
+									fill="#2E66E6"
+								/>
+							</svg>
+						</Link>
 						Add New Inventory Item
 					</h1>
 				</div>
@@ -323,7 +343,7 @@ export default function AddNewInventory({ onAddInventory, warehouses }) {
 									{warehouses && warehouses.length > 0 ? (
 										warehouses.map((wh) => (
 											<option key={wh.id} value={wh.id}>
-												{wh.name}
+												{wh.warehouse_name}
 											</option>
 										))
 									) : (
@@ -354,7 +374,9 @@ export default function AddNewInventory({ onAddInventory, warehouses }) {
 
 					<div className="buttons">
 						<div className="buttons__wrapper">
-							<button className="buttons__button cancel">Cancel</button>
+							<Link to="/inventory">
+								<button className="buttons__button cancel">Cancel</button>
+							</Link>
 							<button type="submit" className="buttons__button add-warehouse">
 								+ Add Warehouse
 							</button>

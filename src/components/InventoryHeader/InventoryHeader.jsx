@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./InventoryHeader.scss";
 
 const InventoryHeader = () => {
@@ -19,7 +20,9 @@ const InventoryHeader = () => {
 					/>
 				</svg>
 			</div>
-			<button className="inventory-header__button">+ Add New Item</button>
+			<Link to="/addinventories">
+				<button className="inventory-header__button">+ Add New Item</button>
+			</Link>
 		</section>
 	);
 };
