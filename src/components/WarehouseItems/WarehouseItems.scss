@@ -1,7 +1,7 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
 
-.inventory-list-item {
+.warehouse-item {
   padding: $padding-mobile;
   border-top: 1px solid $outlines-dividers-borders-tablesorting-color;
 
@@ -50,11 +50,6 @@
     }
   }
 
-  &__link {
-    flex: 1;
-    text-decoration: none;
-  }
-
   &__header {
     padding-bottom: 4px;
 
@@ -84,5 +79,6 @@
 
   &__edit {
     @include flex(row, space-between, center);
+    gap: 1rem;
   }
 }
