@@ -18,6 +18,13 @@ export default function WarehouseList({}) {
     setSelectedWarehouse(warehouse);
     setisModalOpen(true);
   };
+  const [warehouses, setWarehouses] = useState([]);
+  const [selectedWarehouse, setSelectedWarehouse] = useState(null);
+  const [isModalOpen, setisModalOpen] = useState(false);
+  const openModal = (warehouse) => {
+    setSelectedWarehouse(warehouse);
+    setisModalOpen(true);
+  };
 
   const closeModal = () => {
     setSelectedWarehouse(null);
@@ -37,6 +44,19 @@ export default function WarehouseList({}) {
     };
     fetchWarehouses();
   }, []);
+  // const handleDelete = async (warehouseId) => {
+  // 	try {
+  // 		const URL = `http://localhost:8080/api/warehouses/${warehouseId}`;
+  // 		await axios.delete(URL);
+
+  // 		setWarehouses((prev) =>
+  // 			prev.filter((warehouse) => warehouse.id !== warehouseId)
+  // 		);
+  // 		setSelectedWarehouse(null);
+  // 	} catch (error) {
+  // 		console.error("Error deleting inventory item:", error);
+  // 	}
+  // };
 
   return (
     <>
@@ -163,16 +183,11 @@ export default function WarehouseList({}) {
                   <div className="warehouse-list__email">
                     {warehouse.contact_email}
                   </div>
-                  <Link
-                    className="inventory-list-item__link"
-                    to={`/editWarehouse/${warehouse.id}`}
-                  >
-                    <img
-                      className="warehouse-list__image-contact"
-                      src={edit}
-                      alt=""
-                    />
-                  </Link>
+                  <img
+                    className="warehouse-list__image-contact"
+                    src={edit}
+                    alt=""
+                  />
                 </div>
               </div>
               <div className="wrapper-item">

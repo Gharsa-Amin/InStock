@@ -3,11 +3,13 @@ import "./App.scss";
 import WarehousePage from "./pages/WarehousePage/WarehousePage";
 import Header from "./components/Header/Header";
 import WarehouseDetails from "./components/WarehouseDetails/WarehouseDetails";
+import WarehouseDetailsPage from "./pages/WarehouseDetailsPage/WarehouseDetailsPage";
 import AddNewWarehouse from "./components/AddNewWarehouse/AddNewWarehouse";
 import Footer from "./components/Footer/Footer";
 import AddNewInventory from "./components/AddNewInventory/AddNewInventory";
 import InventoryDetails from "./components/InventoryDetails/InventoryDetails";
 import InventoryPage from "./pages/InventoryPage/IventoryPage";
+import AddNewInventory from "./components/AddNewInventory/AddNewInventory";
 
 /* MAKE NOT FOUND PAGE */
 import WarehouseEdit from "./components/WarehouseEdit/WarehouseEdit";
@@ -24,8 +26,7 @@ function App() {
           element={<InventoryDetails />}
         ></Route>
         <Route path="/addWarehouses" element={<AddNewWarehouse />}></Route>
-        <Route path="/editWarehouse/:id" element={<WarehouseEdit />}></Route>
-        <Route path="/warehouses/:id" element={<WarehouseDetails />} />
+        <Route path="/warehouses/:id" element={<WarehouseDetailsPage />} />
         <Route path="/addinventories" element={<AddNewInventory />}></Route>
       </Routes>
       <Footer />
