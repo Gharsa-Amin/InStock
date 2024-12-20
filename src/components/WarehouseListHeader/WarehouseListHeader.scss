@@ -1,7 +1,6 @@
-@use "../../styles/partials/variables" as *;
 @use "../../styles/partials/typography" as *;
+@use "../../styles/partials/variables" as *;
 @use "../../styles/partials/mixins" as *;
-
 *::before,
 *,
 *::after {
@@ -12,9 +11,9 @@ input {
 	border: none;
 }
 
-.inventory-header {
+.warehouse-header {
 	@include flex(column, space-between, center);
-	// padding: $padding-mobile;
+	padding: $padding-mobile;
 	background-color: $global-white-color;
 
 	@include tablet {
@@ -38,10 +37,11 @@ input {
 		border: 1px solid $outlines-dividers-borders-tablesorting-color;
 		@include flex(row, space-between, center);
 		padding: 4px $padding-increment;
-		// margin: $padding-mobile;
+		margin: $padding-mobile;
 
 		@include tablet {
 			flex: 1;
+			height: $form-field-height-tablet;
 		}
 	}
 
@@ -51,6 +51,7 @@ input {
 
 		@include tablet {
 			flex: 1;
+			@include primary-button-styling-tablet;
 		}
 	}
 }

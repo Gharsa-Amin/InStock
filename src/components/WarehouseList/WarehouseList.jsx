@@ -6,9 +6,12 @@ import React from "react";
 import chevron from "../../assets/icons/chevron_right-24px.svg";
 import remove from "../../assets/icons/delete_outline-24px.svg";
 import edit from "../../assets/icons/edit-24px.svg";
+import WarehouseListHeader from "../WarehouseListHeader/WarehouseListHeader";
+import SortSVG from "../SortSVG/SortSVG";
 
 export default function WarehouseList({}) {
   const [warehouses, setWarehouses] = useState([]);
+
 
   useEffect(() => {
     const fetchWarehouses = async () => {
@@ -169,4 +172,5 @@ export default function WarehouseList({}) {
       ))}
     </section>
   );
+
 }
