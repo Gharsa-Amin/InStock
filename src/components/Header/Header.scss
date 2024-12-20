@@ -25,11 +25,17 @@
   &__nav {
     width: 100%;
     @include flex(row, space-between, stretch);
+    color: $global-white-color;
 
     @include tablet {
       width: 25%;
     }
   }
+
+  &__nav-text {
+    color: $global-white-color;
+  }
+
   &__nav-link {
     width: 50%;
     @include flex(row, center, center);
