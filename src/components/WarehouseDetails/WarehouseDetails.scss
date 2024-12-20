@@ -58,6 +58,22 @@
     border-radius: 50%;
     cursor: pointer;
 
+    &:hover {
+      background-color: #ffffff;
+      border: 0.0625rem solid #2e66e5;
+
+      .warehouse__edit-text {
+        color: #2e66e5;
+        font-weight: 600;
+      }
+
+      svg {
+        path {
+          fill: #2e66e5;
+        }
+      }
+    }
+
     @include tablet {
       width: auto;
       height: 2.375rem;

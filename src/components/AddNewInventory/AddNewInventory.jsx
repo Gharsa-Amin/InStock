@@ -1,13 +1,15 @@
 import { useState, useEffect } from "react";
 import "./AddNewInventory.scss";
+import axios from "axios";
 
 export default function AddNewInventory({ onAddInventory, warehouses }) {
 	const [inventoryName, setInventoryName] = useState("");
 	const [description, setDescription] = useState("");
 	const [category, setCategory] = useState("");
-	const [inStock, setInStock] = useState("");
+	const [inStock, setInStock] = useState(true);
 	const [quantity, setQuantity] = useState("");
 	const [warehouse, setWarehouse] = useState("");
+
 	const [inventoryNameError, setInventoryNameError] = useState(false);
 	const [descriptionError, setDescriptionError] = useState(false);
 	const [categoryError, setCategoryError] = useState(false);
@@ -42,19 +44,18 @@ export default function AddNewInventory({ onAddInventory, warehouses }) {
 		}
 
 		const newInventory = {
-			inventoryName,
-			description,
-			category,
-			inStock,
-			quantity: inStock === "In Stock" ? quantity : 0,
-			warehouse: warehouse,
+			warehouse_id: warehouse,
+			item_name: inventoryName,
+			description: description,
+			category: category,
+			status: inStock ? "In Stock" : "Out of Stock",
+			quantity: inStock ? quantity : 0,
 		};
 
+		const url = "http://localhost:8080/api/inventories";
 		try {
-			// Assume there's a backend API to handle this request
-			// const response = await axios.post(`${API_URL}/inventory`, newInventory);
-			// Simulate the successful response:
-			onAddInventory(newInventory); // Add new inventory to the list
+			await axios.post(url, newInventory);
+			onAddInventory(newInventory);
 
 			setInventoryName("");
 			setDescription("");
@@ -131,10 +132,10 @@ export default function AddNewInventory({ onAddInventory, warehouses }) {
 							{/* Description */}
 							<div className="inventory__info-wrapper">
 								<label className="inventory__label">Description</label>
-								<input
+								<textarea
 									type="text"
 									name="description"
-									placeholder="Description"
+									placeholder="Please enter a brief item description..."
 									value={description}
 									className={`inventory__input ${
 										descriptionError ? "error" : ""
@@ -165,6 +166,7 @@ export default function AddNewInventory({ onAddInventory, warehouses }) {
 							</div>
 
 							{/* Category */}
+
 							<div className="inventory__info-wrapper">
 								<label className="inventory__label">Category</label>
 								<select
@@ -201,91 +203,109 @@ export default function AddNewInventory({ onAddInventory, warehouses }) {
 									</p>
 								)}
 							</div>
-
+						</div>
+						<div className="details">
 							<div className="inventory__info-wrapper">
 								<label className="inventory__label">Status</label>
-
-								<div
-									className={`status-circle ${
-										inStock === "In Stock" ? "active" : ""
-									}`}
-									onClick={() => {
-										setInStock("In Stock");
-										setInStockError(false);
-										setQuantity("");
-										setWarehouse("");
-									}}
-								>
-									<div className="circle-inner"></div>
-									<span>In Stock</span>
-								</div>
-
-								<div
-									className={`status-circle ${
-										inStock === "Out of Stock" ? "active" : "inactive"
-									}`}
-									onClick={() => {
-										setInStock("Out of Stock");
-										setInStockError(false);
-										setQuantity("");
-										setWarehouse("");
-									}}
-								>
-									<div className="circle-inner"></div>
-									<span>Out of Stock</span>
-								</div>
-
-								{inStockError && (
-									<p className="error-message">
-										<svg
-											className="error-svg"
-											width="24"
-											height="24"
-											viewBox="0 0 24 24"
-											fill="none"
-											xmlns="http://www.w3.org/2000/svg"
-										>
-											<path
-												d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM13 17H11V15H13V17ZM13 13H11V7H13V13Z"
-												fill="#C94515"
+								<div className="main-wrapper">
+									<div
+										className={`circle-inner ${
+											inStock ? "active" : "inactive"
+										}`}
+									>
+										<label className="label">
+											In Stock
+											<input
+												className="input-form"
+												type="radio"
+												name="state"
+												value={inStock}
+												checked={inStock}
+												onClick={() => {
+													setInStock(true);
+													setInStockError(false);
+													setQuantity("");
+													setWarehouse("");
+												}}
 											/>
-										</svg>
-										This field is required
-									</p>
-								)}
+										</label>
+									</div>
+									<div
+										className={`circle-inner ${
+											!inStock ? "active" : "inactive"
+										}`}
+									>
+										<label className="label">
+											Out of Stock
+											<input
+												className="input-form"
+												type="radio"
+												name="state"
+												onClick={() => {
+													setInStock(false);
+													setInStockError(false);
+													setQuantity("");
+													setWarehouse("");
+												}}
+											></input>
+										</label>
+									</div>
+									{inStockError && (
+										<p className="error-message">
+											<svg
+												className="error-svg"
+												width="24"
+												height="24"
+												viewBox="0 0 24 24"
+												fill="none"
+												xmlns="http://www.w3.org/2000/svg"
+											>
+												<path
+													d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM13 17H11V15H13V17ZM13 13H11V7H13V13Z"
+													fill="#C94515"
+												/>
+											</svg>
+											This field is required
+										</p>
+									)}
+								</div>
 							</div>
-							<div className="inventory__info-wrapper">
-								<label className="inventory__label">Quantity</label>
-								<input
-									type="number"
-									name="quantity"
-									placeholder="Quantity"
-									value={quantity}
-									className={`inventory__input ${quantityError ? "error" : ""}`}
-									onChange={(e) => {
-										setQuantity(e.target.value);
-										setQuantityError(false);
-									}}
-								/>
-								{quantityError && (
-									<p className="error-message">
-										<svg
-											className="error-svg"
-											width="24"
-											height="24"
-											viewBox="0 0 24 24"
-											fill="none"
-											xmlns="http://www.w3.org/2000/svg"
-										>
-											<path
-												d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM13 17H11V15H13V17ZM13 13H11V7H13V13Z"
-												fill="#C94515"
-											/>
-										</svg>
-										This field is required
-									</p>
-								)}
-							</div>
+							{inStock && (
+								<div className="inventory__info-wrapper">
+									<label className="inventory__label">Quantity</label>
+									<input
+										type="number"
+										name="quantity"
+										placeholder="Quantity"
+										value={quantity}
+										className={`inventory__inputs ${
+											quantityError ? "error" : ""
+										}`}
+										onChange={(e) => {
+											setQuantity(e.target.value);
+											setQuantityError(false);
+										}}
+									/>
+									{quantityError && (
+										<p className="error-message">
+											<svg
+												className="error-svg"
+												width="24"
+												height="24"
+												viewBox="0 0 24 24"
+												fill="none"
+												xmlns="http://www.w3.org/2000/svg"
+											>
+												<path
+													d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM13 17H11V15H13V17ZM13 13H11V7H13V13Z"
+													fill="#C94515"
+												/>
+											</svg>
+											This field is required
+										</p>
+									)}
+								</div>
+							)}
 
 							<div className="inventory__info-wrapper">
 								<label className="inventory__label">Warehouse</label>
@@ -333,10 +353,12 @@ export default function AddNewInventory({ onAddInventory, warehouses }) {
 					</div>
 
 					<div className="buttons">
-						<button className="buttons__button cancel">Cancel</button>
-						<button type="submit" className="buttons__button add-inventory">
-							+ Add Item
-						</button>
+						<div className="buttons__wrapper">
+							<button className="buttons__button cancel">Cancel</button>
+							<button type="submit" className="buttons__button add-warehouse">
+								+ Add Warehouse
+							</button>
+						</div>
 					</div>
 				</form>
 			</div>
