@@ -11,24 +11,25 @@ import InventoryDetails from "./components/InventoryDetails/InventoryDetails";
 import InventoryPage from "./pages/InventoryPage/IventoryPage";
 
 function App() {
-  return (
-    <BrowserRouter>
-      <Header />
-      {/* <AddNewInventory /> */}
-      <Routes>
-        <Route path="/" element={<WarehousePage />}></Route>
-        <Route path="/inventory" element={<InventoryPage />}></Route>
-        <Route
-          path="/inventory/:inventoryId"
-          element={<InventoryDetails />}
-        ></Route>
-        <Route path="/addWarehouses" element={<AddNewWarehouse />}></Route>
-        <Route path="/warehouses/:id" element={<WarehouseDetails />} />
-        {/* MAKE NOT FOUND PAGE */}
-      </Routes>
-      <Footer />
-    </BrowserRouter>
-  );
+	return (
+		<BrowserRouter>
+			<Header />
+
+			<Routes>
+				<Route path="/" element={<WarehousePage />}></Route>
+				<Route path="/inventory" element={<InventoryPage />}></Route>
+				<Route
+					path="/inventory/:inventoryId"
+					element={<InventoryDetails />}
+				></Route>
+				<Route path="/addWarehouses" element={<AddNewWarehouse />}></Route>
+				<Route path="/warehouses/:id" element={<WarehouseDetails />} />
+				<Route path="/addinventories" element={<AddNewInventory />}></Route>
+				{/* MAKE NOT FOUND PAGE */}
+			</Routes>
+			<Footer />
+		</BrowserRouter>
+	);
 }
 
 export default App;
