@@ -5,8 +5,8 @@ import WarehouseListHeader from "../../components/WarehouseListHeader/WarehouseL
 const HomePage = () => {
 	return (
 		<>
-			<WarehouseListHeader />
-			<WarehouseList />
+			{/* <WarehouseListHeader />
+			<WarehouseList /> */}
 		</>
 	);
 };
