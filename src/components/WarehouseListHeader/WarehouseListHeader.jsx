@@ -1,10 +1,10 @@
 import "./WarehouseListHeader.scss";
 
-const InventoryHeader = () => {
+const WarehouseListHeader = () => {
 	return (
-		<section className="inventory-header">
-			<h1 className="inventory-header__title">Warehouses</h1>
-			<div className="inventory-header__search">
+		<section className="warehouse-header">
+			<h1 className="warehouse-header__title">Warehouses</h1>
+			<div className="warehouse-header__search">
 				<input type="text" placeholder="Search..." />
 				<svg
 					width="24"
@@ -19,8 +19,8 @@ const InventoryHeader = () => {
 					/>
 				</svg>
 			</div>
-			<button className="inventory-header__button">+ Add New Item</button>
+			<button className="warehouse-header__button">+ Add New Item</button>
 		</section>
 	);
 };
-export default InventoryHeader;
+export default WarehouseListHeader;

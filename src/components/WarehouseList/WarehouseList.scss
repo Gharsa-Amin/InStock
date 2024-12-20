@@ -1,12 +1,20 @@
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/typography" as *;
 @use "../../styles/partials/mixins" as *;
-
 body {
-	// background-color: $page-background-color;
 	color: $global-text-color;
 	font-family: $primary-font;
 	font-size: 0.9375rem;
+}
+.warehouse-page {
+	background-color: $page-background-color;
+	padding: $padding-mobile;
+	@include tablet {
+		padding: 2rem;
+	}
+	@include desktop {
+		padding: 2rem 8rem;
+	}
 }
 .warehouse-list__name {
 	color: $interactive-elements-color;
@@ -75,20 +83,6 @@ body {
 		display: none;
 	}
 }
-
-// .top-wrapper {
-// 	display: flex;
-// 	justify-content: space-between;
-// }
-
-// .bottom-wrapper {
-// 	display: flex;
-// 	justify-content: space-between;
-// 	border-bottom: 1px solid $outlines-dividers-borders-tablesorting-color;
-// 	@include tablet {
-// 		border-bottom: none;
-// 	}
-// }
 
 .warehouse-list__contact-header {
 	padding-top: $padding-increment;
