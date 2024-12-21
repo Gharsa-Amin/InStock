@@ -7,7 +7,6 @@ import chevron from "../../assets/icons/chevron_right-24px.svg";
 import remove from "../../assets/icons/delete_outline-24px.svg";
 import edit from "../../assets/icons/edit-24px.svg";
 import WarehouseListHeader from "../WarehouseListHeader/WarehouseListHeader";
-
 import WarehouseDelete from "../WarehouseDelete/WarehouseDelete";
 
 export default function WarehouseList() {
@@ -18,7 +17,6 @@ export default function WarehouseList() {
 		setSelectedWarehouse(warehouse);
 		setisModalOpen(true);
 	};
-
 	const closeModal = () => {
 		setSelectedWarehouse(null);
 		setisModalOpen(false);
@@ -29,7 +27,6 @@ export default function WarehouseList() {
 			try {
 				const response = await axios.get(URL);
 				console.log(response.data);
-
 				setWarehouses(response.data);
 			} catch (error) {
 				console.error(error);
@@ -37,7 +34,6 @@ export default function WarehouseList() {
 		};
 		fetchWarehouses();
 	}, []);
-
 	return (
 		<>
 			<section className="warehouse-list">
@@ -98,11 +94,13 @@ export default function WarehouseList() {
 										onClick={() => openModal(warehouse)}
 										src={remove}
 									/>
-									<img
-										className="warehouse-list__image-tablet"
-										src={edit}
-										alt=""
-									/>
+									<Link to={`/editWarehouses/${warehouse.id}`}>
+										<img
+											className="warehouse-list__image-tablet"
+											src={edit}
+											alt=""
+										/>
+									</Link>
 								</div>
 							</div>
 						</div>
@@ -110,7 +108,6 @@ export default function WarehouseList() {
 					// </div>
 				))}
 			</section>
-
 			{isModalOpen ? (
 				<WarehouseDelete
 					setWarehouses={setWarehouses}

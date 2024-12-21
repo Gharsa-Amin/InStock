@@ -42,11 +42,6 @@
     padding-bottom: $spacing-between-elements;
   }
 
-  &__header {
-    padding-bottom: $spacing-between-elements * 2;
-    border-bottom: none;
-  }
-
   &__label {
     font-weight: $font-semibold;
     padding-bottom: $padding-increment;
@@ -67,6 +62,11 @@
     }
   }
 }
+
+.add-warehouse__header {
+  padding-bottom: $spacing-between-elements * 2;
+  border-bottom: none;
+}
 .error-svg {
   padding-right: $padding-increment;
 }
@@ -86,6 +86,7 @@
 
     &--warehouse {
       width: 50%;
+      border-right: 1px solid $outlines-dividers-borders-tablesorting-color;
     }
   }
 }

@@ -1,6 +1,6 @@
 import "./InventoryDetails.scss";
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 
 const InventoryDetails = () => {
@@ -30,18 +30,20 @@ const InventoryDetails = () => {
     <div className="inventory">
       <header className="inventory__header">
         <div className="inventory__small">
-          <svg
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M20 11H7.83L13.42 5.41L12 4L4 12L12 20L13.41 18.59L7.83 13H20V11Z"
-              fill="#2E66E6"
-            />
-          </svg>
+          <Link to="/inventory">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M20 11H7.83L13.42 5.41L12 4L4 12L12 20L13.41 18.59L7.83 13H20V11Z"
+                fill="#2E66E6"
+              />
+            </svg>
+          </Link>
           <h1 className="inventory__title">{inventory.item_name}</h1>
         </div>
         <div className="inventory__edit-button">
