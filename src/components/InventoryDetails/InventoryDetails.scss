@@ -2,124 +2,123 @@
 @use "../../styles/partials/mixins" as *;
 
 .inventory {
-  margin: $padding-mobile;
-  background-color: $global-white-color;
+	margin: $padding-mobile;
+	background-color: $global-white-color;
 
-  &__header {
-    @include flex(row, space-between, center);
-    padding: $h1-padding $padding-mobile;
-    border-bottom: 1px solid $outlines-dividers-borders-tablesorting-color;
+	&__header {
+		@include flex(row, space-between, center);
+		padding: $h1-padding $padding-mobile;
 
-    @include tablet {
-      padding: $h1-padding;
-    }
-  }
+		@include tablet {
+			padding: $h1-padding;
+		}
+	}
 
-  &__tablet-view {
-    @include tablet {
-      @include flex(row, space-between, center);
-    }
-  }
+	&__tablet-view {
+		@include tablet {
+			@include flex(row, space-between, center);
+		}
+	}
 
-  &__flex {
-    @include tablet {
-      width: 50%;
-      margin: $padding-mobile;
+	&__flex {
+		@include tablet {
+			width: 50%;
+			margin: $padding-mobile;
 
-      &--left {
-        border-right: 1px solid $outlines-dividers-borders-tablesorting-color;
-      }
-    }
-  }
+			&--left {
+				border-right: 1px solid $outlines-dividers-borders-tablesorting-color;
+			}
+		}
+	}
 
-  &__small {
-    @include flex(row, flex-start, center);
-    width: 50%;
-  }
+	&__small {
+		@include flex(row, flex-start, center);
+		width: 50%;
+	}
 
-  &__title {
-    padding-left: $spacing-between-elements;
-  }
+	&__title {
+		padding-left: $spacing-between-elements;
+	}
 
-  &__edit-button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+	&__edit-button {
+		display: flex;
+		justify-content: center;
+		align-items: center;
 
-    @include tablet {
-      background-color: $interactive-elements-color;
-      border-radius: 5rem;
-      width: 5.5rem;
-      height: 38px;
-      padding-right: 16px;
-      color: $global-white-color;
+		@include tablet {
+			background-color: $interactive-elements-color;
+			border-radius: 5rem;
+			width: 5.5rem;
+			height: 38px;
+			padding-right: 16px;
+			color: $global-white-color;
 
-      &:hover {
-        @include CTA-hover-button;
-      }
-    }
-  }
+			&:hover {
+				@include CTA-hover-button;
+			}
+		}
+	}
 
-  &__edit-text {
-    color: transparent;
-    user-select: none;
+	&__edit-text {
+		color: transparent;
+		user-select: none;
 
-    @include tablet {
-      color: white;
-    }
-  }
+		@include tablet {
+			color: white;
+		}
+	}
 
-  &__edit {
-    background-color: $interactive-elements-color;
-    border-radius: 50%;
-    width: 2.25rem;
-    height: 2.25rem;
-    padding: 0.5rem;
+	&__edit {
+		background-color: $interactive-elements-color;
+		border-radius: 50%;
+		width: 2.25rem;
+		height: 2.25rem;
+		padding: 0.5rem;
 
-    &:hover {
-      @include CTA-hover-button;
-    }
-  }
+		&:hover {
+			@include CTA-hover-button;
+		}
+	}
 
-  &__details {
-    padding: $padding-mobile;
-  }
+	&__details {
+		padding: $padding-mobile;
+	}
 
-  &__label {
-    padding-bottom: 4px;
+	&__label {
+		padding-bottom: 4px;
 
-    @include tablet {
-      @include body-medium-tablet;
-    }
+		@include tablet {
+			@include body-medium-tablet;
+		}
 
-    &--warehouse {
-      padding-top: $padding-mobile;
-    }
-  }
+		&--warehouse {
+			padding-top: $padding-mobile;
+		}
+	}
 
-  &__text {
-    @include body-medium-mobile;
-    padding-bottom: $padding-mobile;
+	&__text {
+		@include body-medium-mobile;
+		padding-bottom: $padding-mobile;
 
-    @include tablet {
-      @include body-medium-tablet;
-    }
-  }
+		@include tablet {
+			@include body-medium-tablet;
+		}
+	}
 
-  &__wrapper {
-    @include flex(row, space-between, center);
-    width: 70%;
-  }
+	&__wrapper {
+		@include flex(row, space-between, center);
+		width: 70%;
+	}
 
-  &__tag {
-    @include in-stock-tag-mobile;
+	&__tag {
+		@include in-stock-tag-mobile;
 
-    @include tablet {
-      height: $tag-height-tablet;
-    }
+		@include tablet {
+			height: $tag-height-tablet;
+		}
 
-    &--false {
-      @include out-of-stock-tag-mobile;
-    }
-  }
+		&--false {
+			@include out-of-stock-tag-mobile;
+		}
+	}
 }

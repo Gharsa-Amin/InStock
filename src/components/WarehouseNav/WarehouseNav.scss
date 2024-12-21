@@ -1,0 +1,23 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/mixins" as *;
+
+.warehouse-top__row {
+	display: none;
+	@include tablet {
+		display: flex;
+		justify-content: space-between;
+		background-color: $table-column-header-background-color;
+	}
+}
+.warehouse-top__row-title {
+	display: none;
+	@include tablet {
+		display: flex;
+		padding: 1rem;
+	}
+}
+
+h3 {
+	color: $table-column-header-color;
+}

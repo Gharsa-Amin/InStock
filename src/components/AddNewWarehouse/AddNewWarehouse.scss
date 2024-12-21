@@ -117,7 +117,7 @@
     padding: 0px $button-width-padding;
     border-radius: $button-border-radius;
     border: solid 1px $outlines-dividers-borders-tablesorting-color;
-    width: 48%;
+    // width: 48%;
 
     @include tablet {
       width: auto;
