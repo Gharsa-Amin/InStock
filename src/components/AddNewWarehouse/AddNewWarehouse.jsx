@@ -104,7 +104,7 @@ export default function AddNewWarehouse() {
         <form onSubmit={handleSubmit} className="new-warehouse__form">
           <div className="new-warehouse__form-wrapper">
             <div className="details details--warehouse">
-              <h2 className="warehouse__header">Warehouse Details</h2>
+              <h2 className="add-warehouse__header">Warehouse Details</h2>
               <div className="warehouse__info-wrapper">
                 <label className="warehouse__label">Warehouse Name</label>
                 <input
@@ -239,7 +239,7 @@ export default function AddNewWarehouse() {
               </div>
             </div>
             <div className="details">
-              <h2 className="warehouse__header">Contact Details</h2>
+              <h2 className="add-warehouse__header">Contact Details</h2>
               <div className="warehouse__info-wrapper">
                 <label className="warehouse__label">Contact Name</label>
                 <input
