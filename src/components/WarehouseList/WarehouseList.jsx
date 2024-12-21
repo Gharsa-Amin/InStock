@@ -40,13 +40,13 @@ export default function WarehouseList() {
             <div className="top-tablet">
               <div className="warehouse-list__names">
                 <h3 className="warehouse-list__title">WAREHOUSE</h3>
-                <div className="warehouse-wrapper">
-                  <p className="warehouse-list__name">
-                    {warehouse.warehouse_name}
-                  </p>
-                  <img className="warehouse-list__image" src={chevron} />
-                </div>
-                <Link to="/warehouses/:id">
+                <Link className="link" to="/warehouses/:id">
+                  <div className="warehouse-wrapper">
+                    <p className="warehouse-list__name">
+                      {warehouse.warehouse_name}
+                    </p>
+                    <img className="warehouse-list__image" src={chevron} />
+                  </div>
                   <img className="warehouse-list__imageTablet" src={chevron} />
                 </Link>
               </div>
@@ -110,7 +110,6 @@ export default function WarehouseList() {
               </div>
             </div>
           </div>
-          // </div>
         ))}
       </section>
       {isModalOpen ? (
