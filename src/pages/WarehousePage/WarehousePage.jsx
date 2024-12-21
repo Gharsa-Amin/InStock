@@ -1,12 +1,12 @@
 import WarehouseListHeader from "../../components/WarehouseListHeader/WarehouseListHeader";
 import WarehouseList from "../../components/WarehouseList/WarehouseList";
-import WarehouseInventory from "../../components/WarehouseInventory/WarehouseInventory";
+import "./WarehousePage.scss";
 
 export default function WarehousePage() {
-	return (
-		<>
-			<WarehouseListHeader />
-			<WarehouseList />
-		</>
-	);
+  return (
+    <div className="warehouse-page">
+      <WarehouseListHeader />
+      <WarehouseList />
+    </div>
+  );
 }

@@ -4,6 +4,7 @@
 
 .new-warehouse {
   @include flex(column, center, center);
+  background-color: $page-background-color;
 
   &__wrapper {
     background-color: $global-white-color;
