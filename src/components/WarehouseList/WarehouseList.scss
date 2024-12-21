@@ -22,6 +22,7 @@ body {
 
 .warehouse-list {
 	padding: 1.5625rem;
+	background-color: $global-white-color;
 	&__title {
 		color: $table-column-header-color;
 		padding-top: 1rem;
@@ -108,21 +109,6 @@ body {
 	display: flex;
 }
 
-.warehouse-top__row-title {
-	display: none;
-	@include tablet {
-		display: flex;
-	}
-}
-
-.warehouse-top__row {
-	display: none;
-	@include tablet {
-		display: flex;
-		justify-content: space-between;
-		color: $table-column-header-color;
-	}
-}
 .top-tablet {
 	display: flex;
 	flex-direction: row;

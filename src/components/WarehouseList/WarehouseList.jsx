@@ -7,9 +7,8 @@ import chevron from "../../assets/icons/chevron_right-24px.svg";
 import remove from "../../assets/icons/delete_outline-24px.svg";
 import edit from "../../assets/icons/edit-24px.svg";
 import WarehouseListHeader from "../WarehouseListHeader/WarehouseListHeader";
-import SortSVG from "../SortSVG/SortSVG";
-import WarehouseDelete from "../WarehouseDelete/WarehouseDelete";
 
+import WarehouseDelete from "../WarehouseDelete/WarehouseDelete";
 
 export default function WarehouseList() {
 	const [warehouses, setWarehouses] = useState([]);
@@ -20,17 +19,16 @@ export default function WarehouseList() {
 		setisModalOpen(true);
 	};
 
-
-  const closeModal = () => {
-    setSelectedWarehouse(null);
-    setisModalOpen(false);
-  };
-  useEffect(() => {
-    const fetchWarehouses = async () => {
-      const URL = "http://localhost:8080/api/warehouses";
-      try {
-        const response = await axios.get(URL);
-        console.log(response.data);
+	const closeModal = () => {
+		setSelectedWarehouse(null);
+		setisModalOpen(false);
+	};
+	useEffect(() => {
+		const fetchWarehouses = async () => {
+			const URL = "http://localhost:8080/api/warehouses";
+			try {
+				const response = await axios.get(URL);
+				console.log(response.data);
 
 				setWarehouses(response.data);
 			} catch (error) {
@@ -43,83 +41,6 @@ export default function WarehouseList() {
 	return (
 		<>
 			<section className="warehouse-list">
-				<div className="warehouse-top__row">
-					<div className="warehouse-top__row-title">
-						<h3>WAREHOUSE</h3>
-						<svg
-							width="24"
-							height="24"
-							viewBox="0 0 24 24"
-							fill="none"
-							xmlns="http://www.w3.org/2000/svg"
-						>
-							<path
-								d="M12 5.83L15.17 9L16.58 7.59L12 3L7.41003 7.59L8.83003 9L12 5.83ZM12 18.17L8.83003 15L7.42003 16.41L12 21L16.59 16.41L15.17 15L12 18.17Z"
-								fill="#5C667E"
-							/>
-						</svg>
-					</div>
-					<div className="warehouse-top__row-title">
-						<h3>ADDRESS</h3>
-						<svg
-							width="24"
-							height="24"
-							viewBox="0 0 24 24"
-							fill="none"
-							xmlns="http://www.w3.org/2000/svg"
-						>
-							<path
-								d="M12 5.83L15.17 9L16.58 7.59L12 3L7.41003 7.59L8.83003 9L12 5.83ZM12 18.17L8.83003 15L7.42003 16.41L12 21L16.59 16.41L15.17 15L12 18.17Z"
-								fill="#5C667E"
-							/>
-						</svg>
-					</div>
-					<div className="warehouse-top__row-title">
-						<h3>CONTACT NAME</h3>
-						<svg
-							width="24"
-							height="24"
-							viewBox="0 0 24 24"
-							fill="none"
-							xmlns="http://www.w3.org/2000/svg"
-						>
-							<path
-								d="M12 5.83L15.17 9L16.58 7.59L12 3L7.41003 7.59L8.83003 9L12 5.83ZM12 18.17L8.83003 15L7.42003 16.41L12 21L16.59 16.41L15.17 15L12 18.17Z"
-								fill="#5C667E"
-							/>
-						</svg>
-					</div>
-					<div className="warehouse-top__row-title">
-						<h3>CONTACT INFORMATION</h3>
-						<svg
-							width="24"
-							height="24"
-							viewBox="0 0 24 24"
-							fill="none"
-							xmlns="http://www.w3.org/2000/svg"
-						>
-							<path
-								d="M12 5.83L15.17 9L16.58 7.59L12 3L7.41003 7.59L8.83003 9L12 5.83ZM12 18.17L8.83003 15L7.42003 16.41L12 21L16.59 16.41L15.17 15L12 18.17Z"
-								fill="#5C667E"
-							/>
-						</svg>
-					</div>
-					<div className="warehouse-top__row-title">
-						<h3>ACTIONS</h3>
-						<svg
-							width="24"
-							height="24"
-							viewBox="0 0 24 24"
-							fill="none"
-							xmlns="http://www.w3.org/2000/svg"
-						>
-							<path
-								d="M12 5.83L15.17 9L16.58 7.59L12 3L7.41003 7.59L8.83003 9L12 5.83ZM12 18.17L8.83003 15L7.42003 16.41L12 21L16.59 16.41L15.17 15L12 18.17Z"
-								fill="#5C667E"
-							/>
-						</svg>
-					</div>
-				</div>
 				{warehouses.map((warehouse) => (
 					<div key={warehouses.id}>
 						<div className="top-tablet">
