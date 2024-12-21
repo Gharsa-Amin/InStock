@@ -12,8 +12,9 @@ export default function Header() {
   return (
     <header className="header">
       <div className="header__wrapper">
-        <Link to="/">
+        <Link to="/" className="instock-logo-link">
           <svg
+            className="instock-logo"
             width="129"
             height="28"
             viewBox="0 0 129 28"

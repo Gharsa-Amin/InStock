@@ -3,9 +3,18 @@
 @use "../../styles/partials/mixins" as *;
 
 .warehouse-page {
-  padding: 0 $padding-mobile;
+  padding: 2rem;
+  width: 100%;
+}
+
+.child {
+  width: 80%;
+  position: relative;
+  top: -110px;
+  left: 10%;
+  box-shadow: $box-shadow;
 
   @include tablet {
-    padding: 0 $margin-tablet;
+    top: -150px;
   }
 }

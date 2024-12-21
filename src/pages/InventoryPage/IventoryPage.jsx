@@ -1,10 +1,10 @@
-import AddNewInventory from "../../components/AddNewInventory/AddNewInventory";
+import "./inventoryPage.scss";
 import InventoryList from "../../components/InventoryList/InventoryList";
 
 export default function InventoryPage() {
-	return (
-		<>
-			<InventoryList />
-		</>
-	);
+  return (
+    <>
+      <InventoryList />
+    </>
+  );
 }

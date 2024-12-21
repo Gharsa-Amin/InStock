@@ -1,29 +1,66 @@
-import { useState } from "react";
-import "./AddNewWarehouse.scss";
-import axios from "axios";
+import { useEffect, useState } from "react";
+import "./WarehouseEdit.scss";
 import { Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
+import axios from "axios";
 
-export default function AddNewWarehouse() {
+const WarehouseEdit = () => {
+  const [warehouse, setWarehouse] = useState([]);
+  const { id } = useParams();
+
   const [warehouseName, setWarehouseName] = useState("");
-  const [streetAddress, setStreetAddress] = useState("");
-  const [city, setCity] = useState("");
-  const [country, setCountry] = useState("");
-  const [contactName, setContactName] = useState("");
-  const [position, setPosition] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState("");
-  const [email, setEmail] = useState("");
-
   const [warehouseNameError, setWarehouseNameError] = useState(false);
+  const [streetAddress, setStreetAddress] = useState("");
   const [streetAddressError, setStreetAddressError] = useState(false);
+  const [city, setCity] = useState("");
   const [cityError, setCityError] = useState(false);
+  const [country, setCountry] = useState("");
   const [countryError, setCountryError] = useState(false);
+  const [contactName, setContactName] = useState("");
   const [contactNameError, setContactNameError] = useState(false);
+  const [position, setPosition] = useState("");
   const [positionError, setPositionError] = useState(false);
+  const [phoneNumber, setPhoneNumber] = useState("");
   const [phoneNumberError, setPhoneNumberError] = useState(false);
+  const [email, setEmail] = useState("");
   const [emailError, setEmailError] = useState(false);
+
+  useEffect(() => {
+    const url = `http://localhost:8080/api/warehouses/${id}`;
+    const fetchWarehouseDetails = async () => {
+      try {
+        const response = await axios.get(url);
+        const data = response.data[0];
+        setWarehouse(data);
+        setWarehouseName(data.warehouse_name || "");
+        setStreetAddress(data.address || "");
+        setCity(data.city || "");
+        setCountry(data.country || "");
+        setContactName(data.contact_name || "");
+        setPosition(data.contact_position || "");
+        setPhoneNumber(data.contact_phone || "");
+        setEmail(data.contact_email || "");
+      } catch (error) {
+        console.error("Cannot fetch warehouse details", error);
+      }
+    };
+    fetchWarehouseDetails();
+  }, [id]);
+
+  if (!warehouse) {
+    return <>Loading warehouse details...</>;
+  }
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+
+    console.log("button clicked");
+
+    const isPhoneNumberValid = (number) => {
+      const withoutDashFormat = /^\d{10}$/;
+      const apiFormat = /^\+1 \(\d{3}\) \d{3}-\d{4}$/;
+      return withoutDashFormat.test(number) || apiFormat.test(number);
+    };
 
     setWarehouseNameError(!warehouseName);
     setStreetAddressError(!streetAddress);
@@ -31,7 +68,7 @@ export default function AddNewWarehouse() {
     setCountryError(!country);
     setContactNameError(!contactName);
     setPositionError(!position);
-    setPhoneNumberError(!phoneNumber || phoneNumber.length !== 10);
+    setPhoneNumberError(!phoneNumber || !isPhoneNumberValid(phoneNumber));
     setEmailError(!email || !email.includes("@"));
 
     if (
@@ -42,7 +79,6 @@ export default function AddNewWarehouse() {
       !contactName ||
       !position ||
       !phoneNumber ||
-      phoneNumber.length !== 10 ||
       !email ||
       !email.includes("@")
     ) {
@@ -60,10 +96,12 @@ export default function AddNewWarehouse() {
       contact_email: email,
     };
 
-    const url = "http://localhost:8080/api/warehouses";
+    const url = `http://localhost:8080/api/warehouses/${id}`;
+    console.log(url);
+    console.log(newWarehouseInfo);
 
     try {
-      await axios.post(url, newWarehouseInfo);
+      await axios.patch(url, newWarehouseInfo);
 
       setWarehouseName("");
       setStreetAddress("");
@@ -75,6 +113,10 @@ export default function AddNewWarehouse() {
       setEmail("");
     } catch (error) {
       console.error(error);
+    }
+
+    if (!warehouse) {
+      return <>Loading warehouse details...</>;
     }
   };
 
@@ -98,19 +140,19 @@ export default function AddNewWarehouse() {
                 />
               </svg>
             </Link>
-            Add New Warehouse
+            Edit Warehouse
           </h1>
         </div>
         <form onSubmit={handleSubmit} className="new-warehouse__form">
           <div className="new-warehouse__form-wrapper">
             <div className="details details--warehouse">
-              <h2 className="add-warehouse__header">Warehouse Details</h2>
+              <h2 className="warehouse__header">Warehouse Details</h2>
               <div className="warehouse__info-wrapper">
                 <label className="warehouse__label">Warehouse Name</label>
                 <input
                   type="text"
                   name="warehouseName"
-                  placeholder="Warehouse Name"
+                  //placeholder={warehouse.warehouse_name}
                   value={warehouseName}
                   className={`warehouse__input ${
                     warehouseNameError ? "error" : ""
@@ -144,7 +186,7 @@ export default function AddNewWarehouse() {
                 <input
                   type="text"
                   name="streetAddress"
-                  placeholder="Street Address"
+                  //placeholder={warehouse.address}
                   value={streetAddress}
                   className={`warehouse__input ${
                     streetAddressError ? "error" : ""
@@ -178,7 +220,7 @@ export default function AddNewWarehouse() {
                 <input
                   type="text"
                   name="city"
-                  placeholder="City"
+                  //placeholder={warehouse.city}
                   value={city}
                   className={`warehouse__input ${cityError ? "error" : ""} `}
                   onChange={(event) => {
@@ -210,7 +252,7 @@ export default function AddNewWarehouse() {
                 <input
                   type="text"
                   name="country"
-                  placeholder="Country"
+                  //placeholder={warehouse.country}
                   value={country}
                   className={`warehouse__input ${countryError ? "error" : ""} `}
                   onChange={(event) => {
@@ -238,14 +280,15 @@ export default function AddNewWarehouse() {
                 )}
               </div>
             </div>
+
             <div className="details">
-              <h2 className="add-warehouse__header">Contact Details</h2>
+              <h2 className="warehouse__header">Contact Details</h2>
               <div className="warehouse__info-wrapper">
                 <label className="warehouse__label">Contact Name</label>
                 <input
                   type="text"
                   name="contactName"
-                  placeholder="Contact Name"
+                  //placeholder={warehouse.contact_name}
                   value={contactName}
                   className={`warehouse__input ${
                     contactNameError ? "error" : ""
@@ -279,7 +322,7 @@ export default function AddNewWarehouse() {
                 <input
                   type="text"
                   name="position"
-                  placeholder="Position"
+                  //placeholder={warehouse.contact_position}
                   value={position}
                   className={`warehouse__input ${
                     positionError ? "error" : ""
@@ -313,7 +356,7 @@ export default function AddNewWarehouse() {
                 <input
                   type="text"
                   name="phoneNumber"
-                  placeholder="Phone Number"
+                  //placeholder={warehouse.contact_phone}
                   value={phoneNumber}
                   className={`warehouse__input ${
                     phoneNumberError ? "error" : ""
@@ -347,7 +390,7 @@ export default function AddNewWarehouse() {
                 <input
                   type="text"
                   name="email"
-                  placeholder="Email"
+                  //placeholder={warehouse.contact_email}
                   value={email}
                   className={`warehouse__input ${emailError ? "error" : ""} `}
                   onChange={(event) => {
@@ -376,13 +419,14 @@ export default function AddNewWarehouse() {
               </div>
             </div>
           </div>
+
           <div className="buttons">
             <div className="buttons__wrapper">
               <Link to="/">
                 <button className="buttons__button cancel">Cancel</button>
               </Link>
               <button type="submit" className="buttons__button add-warehouse">
-                + Add Warehouse
+                Save
               </button>
             </div>
           </div>
@@ -390,4 +434,6 @@ export default function AddNewWarehouse() {
       </div>
     </div>
   );
-}
+};
+
+export default WarehouseEdit;
