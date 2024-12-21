@@ -9,6 +9,7 @@ import InventoryDetails from "./components/InventoryDetails/InventoryDetails";
 import InventoryPage from "./pages/InventoryPage/IventoryPage";
 import WarehouseEdit from "./components/WarehouseEdit/WarehouseEdit";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
+import AddNewInventory from "./components/AddNewInventory/AddNewInventory";
 
 function App() {
   return (
