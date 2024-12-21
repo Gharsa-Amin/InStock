@@ -9,7 +9,12 @@
 		background-color: $global-white-color;
 		box-shadow: 1px 1px 5px 2px rgba(189, 197, 213, 0.2);
 		width: 90%;
-
+		position: absolute;
+		top: 25%;
+		@include tablet {
+			position: absolute;
+			top: 20%;
+		}
 		@include desktop {
 			max-width: 1280px;
 		}
@@ -26,10 +31,6 @@
 .h1 {
 	padding: $h1-padding 0px;
 	@include flex(row, flex-start, center);
-
-	@include tablet {
-		border-bottom: 1px solid $outlines-dividers-borders-tablesorting-color;
-	}
 }
 
 .arrow-back {
@@ -131,8 +132,6 @@
 		padding: 0px $button-width-padding;
 		border-radius: $button-border-radius;
 		border: solid 1px $outlines-dividers-borders-tablesorting-color;
-		width: 48%;
-
 		@include tablet {
 			width: auto;
 		}
@@ -159,21 +158,10 @@
 		width: 16px;
 		height: 16px;
 		border-radius: 50%;
-		// border: 2px solid #2e66e6;
 		margin-right: 8px;
 		background-color: transparent;
 		transition: background-color 0.3s;
 	}
-
-	// &active {
-	// 	background-color: #2e66e6;
-	// 	color: red;
-	// }
-
-	// &inactive {
-	// 	background-color: #e0e0e0;
-	// 	color: green;
-	// }
 
 	span {
 		color: #333;
@@ -190,12 +178,10 @@ textarea.inventory__input {
 }
 
 .active {
-	// background-color: #2e66e6;
 	color: $global-text-color;
 }
 
 .inactive {
-	// background-color: #e0e0e0;
 	color: $table-column-header-color;
 }
 
