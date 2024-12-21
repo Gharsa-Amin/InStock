@@ -2,51 +2,58 @@
 @use "../../styles/partials/mixins" as *;
 
 .inventory-page {
-	background-color: $page-background-color;
-	padding: $padding-mobile;
+  background-color: $page-background-color;
+  margin: $padding-mobile;
+  position: relative;
+  width: 85%;
+  bottom: 8rem;
+  margin: 2rem;
 
-	@include tablet {
-		padding: 2rem;
-	}
+  @include tablet {
+    width: 92%;
+    bottom: 8.5rem;
+  }
 
-	@include desktop {
-		padding: 2rem 8rem;
-	}
+  @include desktop {
+    margin: 2rem 8rem;
+    right: 5rem;
+  }
 }
 
 .inventory-nav {
-	display: none;
+  display: none;
 
-	@include tablet {
-		display: flex;
-		flex-direction: row;
-		justify-content: flex-start;
-		align-items: center;
-		padding: $padding-mobile;
-	}
+  @include tablet {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding: $padding-mobile;
+  }
 
-	&__header {
-		@include tablet {
-			width: 100%;
-			flex: 2;
-		}
+  &__header {
+    @include tablet {
+      width: 100%;
+      flex: 2;
+    }
 
-		&--flex {
-			display: flex;
-			justify-content: space-around;
-			width: 100%;
-			flex: 3;
-		}
+    &--flex {
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+      flex: 3;
+    }
 
-		&--action {
-			@include tablet {
-				flex: 1;
-				text-align: right;
-			}
-		}
-	}
+    &--action {
+      @include tablet {
+        flex: 1;
+        text-align: right;
+      }
+    }
+  }
 }
 
 .inventory {
-	background-color: $global-white-color;
+  background-color: $global-white-color;
+  margin: 0;
 }
