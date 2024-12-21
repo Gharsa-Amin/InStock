@@ -16,6 +16,7 @@ import WarehouseEdit from "./components/WarehouseEdit/WarehouseEdit";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 
 function App() {
+
 	return (
 		<BrowserRouter>
 			<Header />
@@ -35,6 +36,7 @@ function App() {
 			<Footer />
 		</BrowserRouter>
 	);
+
 }
 
 export default App;
