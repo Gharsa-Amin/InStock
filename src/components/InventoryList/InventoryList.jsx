@@ -45,56 +45,58 @@ const InventoryList = () => {
   };
 
   return (
-    <section className="inventory-page">
-      {selectedItem && (
-        <DeleteInventoryItem
-          item={selectedItem}
-          handleClose={closeModal}
-          handleDelete={() => handleDelete(selectedItem.id)}
-        />
-      )}
-      <InventoryHeader />
-      <div className="inventory-nav">
-        <h4 className="inventory-nav__header">
-          INVENTORY ITEM
-          <SortSVG />
-        </h4>
-        <h4 className="inventory-nav__header">
-          CATEGORY
-          <SortSVG />
-        </h4>
-        <div className="inventory-nav__header inventory-nav__header--flex">
+    <div className="inventory-component">
+      <section className="inventory-page">
+        {selectedItem && (
+          <DeleteInventoryItem
+            item={selectedItem}
+            handleClose={closeModal}
+            handleDelete={() => handleDelete(selectedItem.id)}
+          />
+        )}
+        <InventoryHeader />
+        <div className="inventory-nav">
           <h4 className="inventory-nav__header">
-            STATUS
+            INVENTORY ITEM
             <SortSVG />
           </h4>
           <h4 className="inventory-nav__header">
-            QTY
+            CATEGORY
             <SortSVG />
           </h4>
-          <h4 className="inventory-nav__header">
-            WAREHOUSE
+          <div className="inventory-nav__header inventory-nav__header--flex">
+            <h4 className="inventory-nav__header">
+              STATUS
+              <SortSVG />
+            </h4>
+            <h4 className="inventory-nav__header">
+              QTY
+              <SortSVG />
+            </h4>
+            <h4 className="inventory-nav__header">
+              WAREHOUSE
+              <SortSVG />
+            </h4>
+          </div>
+          <h4 className="inventory-nav__header inventory-nav__header--action ">
+            ACTIONS
             <SortSVG />
           </h4>
         </div>
-        <h4 className="inventory-nav__header inventory-nav__header--action ">
-          ACTIONS
-          <SortSVG />
-        </h4>
-      </div>
-      <section className="inventory">
-        {inventories.map((inventoryItem) => {
-          return (
-            <div className="inventory__item" key={inventoryItem.id}>
-              <InventoryListItem
-                inventoryItem={inventoryItem}
-                openModal={openModal}
-              />
-            </div>
-          );
-        })}
+        <section className="inventory">
+          {inventories.map((inventoryItem) => {
+            return (
+              <div className="inventory__item" key={inventoryItem.id}>
+                <InventoryListItem
+                  inventoryItem={inventoryItem}
+                  openModal={openModal}
+                />
+              </div>
+            );
+          })}
+        </section>
       </section>
-    </section>
+    </div>
   );
 };
 

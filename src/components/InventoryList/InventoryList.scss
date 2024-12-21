@@ -1,52 +1,56 @@
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/mixins" as *;
 
+.inventory-component {
+  background-color: $page-background-color;
+  padding: 0 $padding-mobile;
+
+  @include tablet {
+    padding: 0 2rem;
+  }
+
+  @include desktop {
+    padding: 0 8rem;
+  }
+}
+
 .inventory-page {
-	background-color: $page-background-color;
-	padding: $padding-mobile;
-
-	@include tablet {
-		padding: 2rem;
-	}
-
-	@include desktop {
-		padding: 2rem 8rem;
-	}
+  box-shadow: 1px 1px 5px 2px rgba(189, 197, 213, 0.2);
 }
 
 .inventory-nav {
-	display: none;
+  display: none;
 
-	@include tablet {
-		display: flex;
-		flex-direction: row;
-		justify-content: flex-start;
-		align-items: center;
-		padding: $padding-mobile;
-	}
+  @include tablet {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding: $padding-mobile;
+  }
 
-	&__header {
-		@include tablet {
-			width: 100%;
-			flex: 2;
-		}
+  &__header {
+    @include tablet {
+      width: 100%;
+      flex: 2;
+    }
 
-		&--flex {
-			display: flex;
-			justify-content: space-around;
-			width: 100%;
-			flex: 3;
-		}
+    &--flex {
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+      flex: 3;
+    }
 
-		&--action {
-			@include tablet {
-				flex: 1;
-				text-align: right;
-			}
-		}
-	}
+    &--action {
+      @include tablet {
+        flex: 1;
+        text-align: right;
+      }
+    }
+  }
 }
 
 .inventory {
-	background-color: $global-white-color;
+  background-color: $global-white-color;
 }
