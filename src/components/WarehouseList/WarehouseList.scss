@@ -149,6 +149,16 @@ body {
 
 .warehouse-list__names {
 	@include tablet {
+		display: flex;
 		width: 15%;
 	}
+}
+.warehouse-list__imageTablet {
+	@include tablet {
+		width: 1.5rem;
+		height: 1.5rem;
+	}
+}
+.warehouse-list__name {
+	color: $interactive-elements-color;
 }
