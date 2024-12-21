@@ -48,6 +48,9 @@ export default function WarehouseList() {
 									</p>
 									<img className="warehouse-list__image" src={chevron} />
 								</div>
+								<Link to="/warehouses/:id">
+									<img className="warehouse-list__imageTablet" src={chevron} />
+								</Link>
 							</div>
 							<div className="warehouse-list__contact">
 								<h3 className="warehouse-list__contact-name">CONTACT NAME</h3>
@@ -61,7 +64,11 @@ export default function WarehouseList() {
 									<p className="warehouse-list__country">
 										{warehouse.country},
 									</p>
-									<img className="warehouse-list__image" src={remove} />
+									<img
+										className="warehouse-list__image"
+										onClick={() => openModal(warehouse)}
+										src={remove}
+									/>
 								</div>
 							</div>
 							<div className="wrapper-item">
