@@ -10,11 +10,11 @@
     background-color: $global-white-color;
     box-shadow: 1px 1px 5px 2px rgba(189, 197, 213, 0.2);
     width: 90%;
-    position: absolute;
-    top: 25%;
+    position: relative;
+    top: -90px;
+
     @include tablet {
-      position: absolute;
-      top: 20%;
+      top: -150px;
     }
     @include desktop {
       max-width: 1280px;
