@@ -8,7 +8,6 @@ import AddNewWarehouse from "./components/AddNewWarehouse/AddNewWarehouse";
 import Footer from "./components/Footer/Footer";
 import InventoryDetails from "./components/InventoryDetails/InventoryDetails";
 import InventoryPage from "./pages/InventoryPage/IventoryPage";
-import AddNewInventory from "./components/AddNewInventory/AddNewInventory";
 import WarehouseInventory from "./components/WarehouseInventory/WarehouseInventory";
 
 /* MAKE NOT FOUND PAGE */
