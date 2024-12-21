@@ -422,7 +422,9 @@ const WarehouseEdit = () => {
 
           <div className="buttons">
             <div className="buttons__wrapper">
-              <button className="buttons__button cancel">Cancel</button>
+              <Link to="/">
+                <button className="buttons__button cancel">Cancel</button>
+              </Link>
               <button type="submit" className="buttons__button add-warehouse">
                 Save
               </button>

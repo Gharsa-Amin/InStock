@@ -177,11 +177,13 @@ export default function WarehouseList({}) {
                     onClick={openModal}
                     src={remove}
                   />
-                  <img
-                    className="warehouse-list__image-tablet"
-                    src={edit}
-                    alt=""
-                  />
+                  <Link to={`/editWarehouses/${warehouse.id}`}>
+                    <img
+                      className="warehouse-list__image-tablet"
+                      src={edit}
+                      alt=""
+                    />
+                  </Link>
                 </div>
               </div>
             </div>
