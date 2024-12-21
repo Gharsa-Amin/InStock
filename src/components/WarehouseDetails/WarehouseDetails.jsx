@@ -1,9 +1,32 @@
 import "./WarehouseDetails.scss";
 import { useNavigate, useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 const WarehouseDetails = () => {
   const navigate = useNavigate();
   const { id } = useParams();
+  const [warehouse, setWarehouse] = useState({});
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchWarehouseDetails = async () => {
+      try {
+        const response = await fetch(
+          `http://localhost:8080/api/warehouses/${id}`
+        );
+        console.log(response);
+        if (!response.ok) {
+          throw new Error("Failed to fetch warehouse details");
+        }
+        const data = await response.json();
+        setWarehouse(data);
+      } catch (err) {
+        setError(err.message);
+      }
+    };
+
+    fetchWarehouseDetails();
+  }, [id]);
 
   const handleBackClick = () => {
     navigate("/");
@@ -11,6 +34,14 @@ const WarehouseDetails = () => {
 
   const handleEditClick = () => {
     navigate(`/warehouses/${id}/edit`);
+
+    if (error) {
+      return <div className="warehouse">Error: {error}</div>;
+    }
+
+    if (!warehouse) {
+      return <div className="warehouse">Warehouse not found</div>;
+    }
   };
   return (
     <div className="warehouse">
@@ -29,7 +60,7 @@ const WarehouseDetails = () => {
             />
           </svg>
         </button>
-        <span className="warehouse__title">Washington</span>
+        <span className="warehouse__title">{warehouse.warehouse_name}</span>
         <button className="warehouse__edit-button" onClick={handleEditClick}>
           <svg
             width="24"
@@ -50,20 +81,22 @@ const WarehouseDetails = () => {
       <section className="warehouse__details">
         <div className="warehouse__address">
           <h2 className="warehouse__label">WAREHOUSE ADDRESS:</h2>
-          <p className="warehouse__text">33 Pearl Street SW, Washington, USA</p>
+          <p className="warehouse__text">
+            {warehouse.address}, {warehouse.city}, {warehouse.country}
+          </p>
         </div>
 
         <div className="warehouse__contact-wrapper">
           <div className="warehouse__information">
             <h2 className="warehouse__label">CONTACT NAME:</h2>
-            <p className="warehouse__text">Graeme Lyon</p>
-            <p className="warehouse__text">Warehouse Manager</p>
+            <p className="warehouse__text">{warehouse.contact_name}</p>
+            <p className="warehouse__text">{warehouse.contact_position}</p>
           </div>
 
           <div className="warehouse__information">
             <h2 className="warehouse__label">CONTACT INFORMATION:</h2>
-            <p className="warehouse__text">+1 (647) 504-0911</p>
-            <p className="warehouse__text">glyon@instock.com</p>
+            <p className="warehouse__text">{warehouse.contact_phone}</p>
+            <p className="warehouse__text">{warehouse.contact_email}</p>
           </div>
         </div>
       </section>
