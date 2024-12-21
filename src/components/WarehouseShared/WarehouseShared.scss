@@ -1,0 +1,19 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/mixins" as *;
+
+.warehouse-page {
+	padding: 2rem;
+	width: 100%;
+}
+
+.child {
+	width: 80%;
+	position: absolute;
+	top: 30%;
+	left: 10%;
+	@include tablet {
+		top: 20%;
+		left: 10%;
+	}
+}

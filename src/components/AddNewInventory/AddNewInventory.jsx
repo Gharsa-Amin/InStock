@@ -185,8 +185,6 @@ export default function AddNewInventory() {
 								)}
 							</div>
 
-							{/* Category */}
-
 							<div className="inventory__info-wrapper">
 								<label className="inventory__label">Category</label>
 								<select
@@ -200,9 +198,10 @@ export default function AddNewInventory() {
 								>
 									<option value="">Select Category</option>
 									<option value="Electronics">Electronics</option>
-									<option value="Clothing">Clothing</option>
-									<option value="Home Goods">Home Goods</option>
-									<option value="Toys">Toys</option>
+									<option value="Gear">Gear</option>
+									<option value="Apparel">Apparel</option>
+									<option value="Accessories">Accessories</option>
+									<option value="Health">Health</option>
 								</select>
 								{categoryError && (
 									<p className="error-message">
@@ -225,6 +224,7 @@ export default function AddNewInventory() {
 							</div>
 						</div>
 						<div className="details">
+							<h2 className="inventory__header">Items Availability</h2>
 							<div className="inventory__info-wrapper">
 								<label className="inventory__label">Status</label>
 								<div className="main-wrapper">
