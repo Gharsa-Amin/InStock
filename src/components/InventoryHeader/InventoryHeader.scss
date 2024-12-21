@@ -58,6 +58,10 @@ input {
     @include primary-button-styling-mobile;
     width: 100%;
 
+    &:hover {
+      cursor: pointer;
+    }
+
     @include tablet {
       flex: 1;
       @include primary-button-styling-tablet;

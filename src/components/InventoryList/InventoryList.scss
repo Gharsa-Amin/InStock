@@ -3,14 +3,14 @@
 
 .inventory-page {
   background-color: $page-background-color;
-  padding: $padding-mobile;
-
-  @include tablet {
-    padding: 2rem;
-  }
+  margin: $padding-mobile;
+  position: relative;
+  bottom: 120px;
+  box-shadow: $box-shadow;
 
   @include desktop {
-    padding: 2rem 8rem;
+    left: 100px;
+    width: 80%;
   }
 }
 
@@ -53,4 +53,5 @@
 
 .inventory {
   background-color: $global-white-color;
+  margin: 0;
 }

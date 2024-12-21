@@ -53,6 +53,10 @@
   &__link {
     flex: 1;
     text-decoration: none;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   &__header {
