@@ -21,7 +21,7 @@ body {
 }
 
 .warehouse-list {
-  padding: 1.5625rem;
+  padding: 0 1.5625rem;
   background-color: $global-white-color;
   &__title {
     color: $table-column-header-color;
@@ -103,10 +103,14 @@ body {
       margin-left: 0.5rem;
     }
   }
+
+  &__link {
+    @include flex(row, flex-start, center);
+  }
 }
 
 .warehouse-wrapper {
-  display: flex;
+  @include flex(row, center, center);
 }
 
 .warehouse-top__row-title {

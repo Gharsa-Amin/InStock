@@ -5,6 +5,6 @@
 .footer {
   @include flex(row, center, center);
   color: $placeholder-text-color;
-  height: 200px;
+  height: 100px;
   background-color: $page-background-color;
 }

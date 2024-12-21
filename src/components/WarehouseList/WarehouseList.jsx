@@ -42,7 +42,10 @@ export default function WarehouseList() {
             <div className="top-tablet">
               <div className="warehouse-list__names">
                 <h3 className="warehouse-list__title">WAREHOUSE</h3>
-                <Link className="link" to="/warehouses/:id">
+                <Link
+                  className="link warehouse-list__link"
+                  to="/warehouses/:id"
+                >
                   <div className="warehouse-wrapper">
                     <p className="warehouse-list__name">
                       {warehouse.warehouse_name}
