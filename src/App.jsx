@@ -2,16 +2,12 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.scss";
 import WarehousePage from "./pages/WarehousePage/WarehousePage";
 import Header from "./components/Header/Header";
-import WarehouseDetails from "./components/WarehouseDetails/WarehouseDetails";
 import WarehouseDetailsPage from "./pages/WarehouseDetailsPage/WarehouseDetailsPage";
 import AddNewWarehouse from "./components/AddNewWarehouse/AddNewWarehouse";
 import Footer from "./components/Footer/Footer";
 import InventoryDetails from "./components/InventoryDetails/InventoryDetails";
 import InventoryPage from "./pages/InventoryPage/IventoryPage";
-import WarehouseInventory from "./components/WarehouseInventory/WarehouseInventory";
 import AddNewInventory from "./components/AddNewInventory/AddNewInventory";
-
-/* MAKE NOT FOUND PAGE */
 import WarehouseEdit from "./components/WarehouseEdit/WarehouseEdit";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 
