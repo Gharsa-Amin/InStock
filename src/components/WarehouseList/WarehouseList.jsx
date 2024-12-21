@@ -2,11 +2,9 @@ import "./WarehouseList.scss";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import React from "react";
 import chevron from "../../assets/icons/chevron_right-24px.svg";
 import remove from "../../assets/icons/delete_outline-24px.svg";
 import edit from "../../assets/icons/edit-24px.svg";
-import WarehouseListHeader from "../WarehouseListHeader/WarehouseListHeader";
 import WarehouseDelete from "../WarehouseDelete/WarehouseDelete";
 
 export default function WarehouseList() {
@@ -115,7 +113,6 @@ export default function WarehouseList() {
               </div>
             </div>
           </div>
-          // </div>
         ))}
       </section>
       {isModalOpen ? (

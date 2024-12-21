@@ -45,9 +45,22 @@ input {
     }
   }
 
+  &__button-link {
+    width: 100%;
+
+    @include tablet {
+      flex: 1;
+      height: $form-field-height-tablet;
+    }
+  }
+
   &__button {
     @include primary-button-styling-mobile;
     width: 100%;
+
+    &:hover {
+      cursor: pointer;
+    }
 
     @include tablet {
       flex: 1;
