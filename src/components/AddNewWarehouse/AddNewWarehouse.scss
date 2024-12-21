@@ -49,6 +49,12 @@
     padding-bottom: $spacing-between-elements;
   }
 
+  &__header {
+    padding-bottom: $spacing-between-elements * 2;
+    border-bottom: none;
+    border-bottom: 0.0625rem solid #bdc5d5;
+  }
+
   &__label {
     font-weight: $font-semibold;
     padding-bottom: $padding-increment;

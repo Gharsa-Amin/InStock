@@ -1,0 +1,183 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/mixins" as *;
+
+.inventory-edit {
+  @include flex(column, center, center);
+
+  &__container {
+    background-color: $global-white-color;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    position: relative;
+    z-index: 1;
+    top: -5rem;
+    border-radius: 0.25rem;
+
+    @include desktop {
+      max-width: 80rem;
+    }
+  }
+
+  &__header {
+    border-bottom: 0.0625rem solid $outlines-dividers-borders-tablesorting-color;
+    padding: 1rem 0;
+  }
+
+  &__title {
+    @include flex(row, flex-start, center);
+    padding-left: 1rem;
+    height: 5rem;
+
+    @include tablet {
+      padding-left: 2rem;
+    }
+  }
+
+  &__back-link {
+    margin-right: 1rem;
+  }
+
+  &__form {
+    width: 100%;
+  }
+
+  &__form-container {
+    @include tablet {
+      @include flex(row, space-between, stretch);
+      padding: 1rem 0;
+    }
+  }
+
+  &__section {
+    padding: 1rem 2rem;
+    border-top: 0.0625rem solid $outlines-dividers-borders-tablesorting-color;
+
+    @include tablet {
+      width: 50%;
+      border-top: none;
+    }
+
+    &--details {
+      @include tablet {
+        border-right: 0.0625rem solid
+          $outlines-dividers-borders-tablesorting-color;
+      }
+    }
+  }
+
+  &__section-title {
+    margin-bottom: 2rem;
+  }
+
+  &__field {
+    @include flex(column, flex-start, stretch);
+    margin-bottom: 1rem;
+  }
+
+  &__label {
+    font-weight: $font-semibold;
+    margin-bottom: 0.5rem;
+  }
+
+  &__input,
+  &__textarea,
+  &__select {
+    border: 0.0625rem solid $outlines-dividers-borders-tablesorting-color;
+    border-radius: 0.25rem;
+    height: 2.5rem;
+    padding: 0 1rem;
+
+    &:focus {
+      border-color: $interactive-elements-color;
+      outline: none;
+    }
+
+    &--error {
+      border-color: $error-delete-color;
+    }
+  }
+
+  &__textarea {
+    height: 7.5rem;
+    resize: vertical;
+    min-height: 7.5rem;
+    padding: 1rem;
+  }
+
+  &__radio-group {
+    @include flex(row, flex-start, center);
+    gap: 1rem;
+  }
+
+  &__radio-label {
+    @include flex(row, flex-start, center);
+    cursor: pointer;
+  }
+
+  &__radio {
+    margin-right: 0.5rem;
+    cursor: pointer;
+
+    &:checked {
+      accent-color: $interactive-elements-color;
+    }
+  }
+
+  &__error {
+    color: $error-delete-color;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+  }
+
+  &__actions {
+    background-color: $page-background-color;
+    @include flex(row, center, center);
+    padding: 2rem;
+    gap: 1rem;
+
+    @include tablet {
+      @include flex(row, flex-end, center);
+      padding-right: 2rem;
+      gap: 1rem;
+    }
+  }
+
+  &__button {
+    height: 2.5rem;
+    padding: 0rem 1rem;
+    border-radius: 0.25rem;
+    border: 0.0625rem solid $outlines-dividers-borders-tablesorting-color;
+    cursor: pointer;
+    width: 100%;
+
+    @include tablet {
+      width: auto;
+    }
+
+    &:hover {
+      opacity: 0.9;
+    }
+
+    &--cancel {
+      background-color: $global-white-color;
+      border-radius: 1.25rem;
+      width: 9rem;
+
+      &:hover {
+        background-color: darken($global-white-color, 5%);
+      }
+    }
+
+    &--save {
+      background-color: $interactive-elements-color;
+      color: $global-white-color;
+      width: 9rem;
+      border-radius: 1.25rem;
+
+      &:hover {
+        background-color: darken($interactive-elements-color, 5%);
+      }
+    }
+  }
+}

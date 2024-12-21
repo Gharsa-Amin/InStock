@@ -3,11 +3,12 @@
 .warehouse {
   background-color: #ffffff;
   position: relative;
-  top: -4rem;
+  top: -7.5rem;
   z-index: 1;
   max-width: 90%;
   margin: 1rem auto 0;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 0.25rem;
 
   @include tablet {
     top: -6rem;
@@ -22,6 +23,7 @@
     padding: 1rem;
     border-bottom: 0.0625rem solid #bdc5d5;
     gap: 0.5rem;
+    width: 100%;
     height: 5rem;
 
     @include tablet {
@@ -48,8 +50,6 @@
 
   &__edit-button {
     margin-left: auto;
-    width: 2.25rem;
-    height: 2.25rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -57,6 +57,7 @@
     border: none;
     border-radius: 50%;
     cursor: pointer;
+    padding: 8px;
 
     &:hover {
       background-color: #ffffff;
@@ -91,6 +92,7 @@
 
   &__details {
     padding: 0.5rem;
+    margin-top: 1rem;
 
     @include tablet {
       display: flex;
