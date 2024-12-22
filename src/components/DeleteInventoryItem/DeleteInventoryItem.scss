@@ -1,0 +1,93 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/mixins" as *;
+
+.modal-backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+}
+
+.modal {
+  background-color: #ffffff;
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  left: 0;
+  top: 0;
+  padding: $spacing-between-elements;
+
+  @include tablet {
+    height: 35vh;
+    width: 80vw;
+    @include flex(column, space-between, center);
+    top: 30%;
+    left: 10%;
+  }
+
+  &__content {
+    height: 95vh;
+    @include flex(column, space-between, stretch);
+
+    @include tablet {
+      height: 100%;
+      width: 70%;
+      @include flex(column, center, center);
+    }
+  }
+
+  &__content-wrapper {
+    padding-bottom: $spacing-between-elements;
+  }
+
+  &__close {
+    @include flex(row, flex-end, stretch);
+
+    @include tablet {
+      width: 100%;
+    }
+  }
+
+  &__header {
+    padding: $spacing-between-elements 0px;
+  }
+
+  &__text {
+    font-size: 15px;
+  }
+}
+
+.modal-buttons {
+  @include flex(row, space-between, center);
+  width: 100%;
+  padding-bottom: $spacing-between-elements;
+
+  @include tablet {
+    @include flex(row, flex-end, stretch);
+  }
+
+  &__cancel {
+    background-color: $global-white-color;
+    border: 1px solid $outlines-dividers-borders-tablesorting-color;
+    width: 48%;
+
+    @include tablet {
+      width: auto;
+      margin-right: $spacing-between-elements;
+    }
+  }
+
+  &__delete {
+    background-color: $error-delete-color;
+    color: $global-white-color;
+    border: none;
+    width: 48%;
+
+    @include tablet {
+      width: auto;
+    }
+  }
+}

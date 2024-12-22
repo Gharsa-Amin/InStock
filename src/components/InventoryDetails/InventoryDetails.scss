@@ -1,0 +1,140 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.inventory-component {
+  padding: 0;
+}
+
+.inventory-style {
+  margin: 1rem;
+  background-color: $global-white-color;
+  position: relative;
+  bottom: 93px;
+  left: 7px;
+  width: 90%;
+  box-shadow: $box-shadow;
+
+  @include desktop {
+    left: 40px;
+  }
+}
+
+.inventory {
+  &__header {
+    @include flex(row, space-between, center);
+    padding: $h1-padding $padding-mobile;
+    border-bottom: 1px solid $outlines-dividers-borders-tablesorting-color;
+
+    @include tablet {
+      padding: $h1-padding;
+    }
+  }
+
+  &__tablet-view {
+    @include tablet {
+      @include flex(row, space-between, center);
+    }
+  }
+
+  &__flex {
+    @include tablet {
+      width: 50%;
+      margin: $padding-mobile;
+
+      &--left {
+        border-right: 1px solid $outlines-dividers-borders-tablesorting-color;
+      }
+    }
+  }
+
+  &__small {
+    @include flex(row, flex-start, center);
+    width: 50%;
+  }
+
+  &__title {
+    padding-left: $spacing-between-elements;
+  }
+
+  &__edit-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include tablet {
+      background-color: $interactive-elements-color;
+      border-radius: 5rem;
+      width: 5.5rem;
+      height: 38px;
+      padding-right: 16px;
+      color: $global-white-color;
+
+      &:hover {
+        @include CTA-hover-button;
+      }
+    }
+  }
+
+  &__edit-text {
+    color: transparent;
+    user-select: none;
+
+    @include tablet {
+      color: white;
+    }
+  }
+
+  &__edit {
+    background-color: $interactive-elements-color;
+    border-radius: 50%;
+    width: 2.25rem;
+    height: 2.25rem;
+    padding: 0.5rem;
+
+    &:hover {
+      @include CTA-hover-button;
+    }
+  }
+
+  &__details {
+    padding: $padding-mobile;
+  }
+
+  &__label {
+    padding-bottom: 4px;
+
+    @include tablet {
+      @include body-medium-tablet;
+    }
+
+    &--warehouse {
+      padding-top: $padding-mobile;
+    }
+  }
+
+  &__text {
+    @include body-medium-mobile;
+    padding-bottom: $padding-mobile;
+
+    @include tablet {
+      @include body-medium-tablet;
+    }
+  }
+
+  &__wrapper {
+    @include flex(row, space-between, center);
+    width: 70%;
+  }
+
+  &__tag {
+    @include in-stock-tag-mobile;
+
+    @include tablet {
+      height: $tag-height-tablet;
+    }
+
+    &--false {
+      @include out-of-stock-tag-mobile;
+    }
+  }
+}

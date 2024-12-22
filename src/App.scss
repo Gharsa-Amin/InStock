@@ -1,0 +1,65 @@
+@use "./styles/partials/variables" as *;
+@use "./styles/partials/typography" as *;
+@use "./styles/partials/mixins" as *;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $primary-font;
+  color: $global-text-color;
+}
+
+h1 {
+  font-size: 1.75rem;
+  line-height: 2.25rem;
+
+  @include tablet {
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+}
+
+h2 {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+h3 {
+  font-size: 0.8125rem;
+  line-height: 1.25rem;
+}
+
+h4 {
+  font-size: 0.6875rem;
+  line-height: 1rem;
+  color: $table-column-header-color;
+
+  @include tablet {
+    font-size: 0.75rem;
+    line-height: 1.125rem;
+  }
+}
+
+.link {
+  text-decoration: none;
+}
+
+body {
+  font-family: $primary-font;
+}
+
+.app {
+  background-color: #ffffff;
+}
+
+#root {
+  background-color: $page-background-color;
+}
+
+button {
+  height: $button-height-tablet;
+  border-radius: $button-border-radius;
+  padding: 0px $button-width-padding;
+  border: $outlines-dividers-borders-tablesorting-color;
+}

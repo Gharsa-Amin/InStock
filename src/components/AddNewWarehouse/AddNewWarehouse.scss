@@ -1,0 +1,147 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/mixins" as *;
+
+.new-warehouse {
+  @include flex(column, center, center);
+  background-color: $page-background-color;
+
+  &__wrapper {
+    background-color: $global-white-color;
+    box-shadow: $box-shadow;
+    width: 90%;
+    position: relative;
+    top: -90px;
+
+    @include tablet {
+      top: -150px;
+    }
+
+    @include desktop {
+      max-width: 1280px;
+    }
+  }
+
+  &__form-wrapper {
+    @include tablet {
+      @include flex(row, space-between, stretch);
+      padding: $spacing-between-elements 0px;
+    }
+  }
+}
+
+.h1 {
+  padding: $h1-padding 0px;
+  @include flex(row, flex-start, center);
+
+  @include tablet {
+    border-bottom: 1px solid $outlines-dividers-borders-tablesorting-color;
+  }
+}
+
+.arrow-back {
+  margin-right: $spacing-between-elements;
+}
+
+.warehouse {
+  &__info-wrapper {
+    @include flex(column, flex-start, stretch);
+    padding-bottom: $spacing-between-elements;
+  }
+
+  &__header {
+    padding-bottom: $spacing-between-elements * 2;
+    border-bottom: none;
+    border-bottom: 0.0625rem solid #bdc5d5;
+  }
+
+  &__label {
+    font-weight: $font-semibold;
+    padding-bottom: $padding-increment;
+  }
+
+  &__input {
+    border: solid 1px $outlines-dividers-borders-tablesorting-color;
+    border-radius: $form-border-radius;
+    height: $form-field-height-mobile;
+    padding: 0px $form-padding-sides;
+
+    &:focus {
+      border: 1px solid $interactive-elements-color;
+    }
+
+    &.error {
+      border-color: $error-delete-color;
+    }
+  }
+}
+
+.add-warehouse__header {
+  padding-bottom: $spacing-between-elements * 2;
+  border-bottom: none;
+}
+.error-svg {
+  padding-right: $padding-increment;
+}
+
+.error-message {
+  color: $error-delete-color;
+  @include flex(row, flex-start, center);
+  font-size: $body-medium-mobile;
+}
+
+.details {
+  padding: 16px $form-padding-sides * 2;
+
+  @include tablet {
+    width: 50%;
+    border-top: none;
+
+    &--warehouse {
+      width: 50%;
+      border-right: 1px solid $outlines-dividers-borders-tablesorting-color;
+    }
+  }
+}
+
+.buttons {
+  background-color: $page-background-color;
+  @include flex(column, center, center);
+
+  @include tablet {
+    @include flex(column, center, flex-end);
+    padding-right: $spacing-between-elements * 2;
+  }
+
+  &__wrapper {
+    width: 90%;
+    @include flex(row, space-between, center);
+    padding: $spacing-between-elements 0px;
+
+    @include tablet {
+      @include flex(row, flex-end, stretch);
+      gap: $spacing-between-elements;
+    }
+  }
+
+  &__button {
+    height: $button-height-mobile;
+    padding: 0px $button-width-padding;
+    border-radius: $button-border-radius;
+    border: solid 1px $outlines-dividers-borders-tablesorting-color;
+    // width: 48%;
+
+    @include tablet {
+      width: auto;
+    }
+  }
+}
+
+.cancel {
+  background-color: $global-white-color;
+}
+
+.add-warehouse {
+  background-color: $interactive-elements-color;
+  color: $global-white-color;
+}

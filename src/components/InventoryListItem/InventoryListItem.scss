@@ -1,0 +1,92 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.inventory-list-item {
+  padding: $padding-mobile;
+  border-top: 1px solid $outlines-dividers-borders-tablesorting-color;
+
+  @include tablet {
+    @include flex(row, flex-start, center);
+  }
+
+  &__section {
+    @include flex(row, flex-start, stretch);
+    width: 85%;
+
+    @include tablet {
+      width: 100%;
+    }
+  }
+
+  &__flex-left {
+    width: 60%;
+
+    @include tablet {
+      @include flex(row, flex-start, center);
+      width: 100%;
+    }
+  }
+
+  &__flex-right {
+    @include tablet {
+      @include flex(row, flex-start, center);
+      width: 100%;
+    }
+  }
+
+  &__detail {
+    @include body-medium-mobile;
+    padding-bottom: $padding-mobile;
+
+    @include tablet {
+      flex: 1;
+      width: 100%;
+      @include body-medium-tablet;
+    }
+
+    &--inventory {
+      font-weight: 600;
+      color: $interactive-elements-color;
+    }
+  }
+
+  &__link {
+    flex: 1;
+    text-decoration: none;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__header {
+    padding-bottom: 4px;
+
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &__tag-section {
+    flex: 1;
+  }
+
+  &__tag {
+    @include in-stock-tag-mobile;
+    margin-bottom: $padding-mobile;
+
+    @include tablet {
+      flex: 1;
+      max-width: 6rem;
+      @include body-medium-tablet;
+    }
+
+    &--false {
+      @include out-of-stock-tag-mobile;
+    }
+  }
+
+  &__edit {
+    @include flex(row, space-between, center);
+  }
+}

@@ -1,0 +1,98 @@
+@use "./variables" as *;
+
+@mixin tablet {
+  @media (min-width: $tablet-breakpoint) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: $desktop-breakpoint) {
+    @content;
+  }
+}
+
+@mixin flex($direction, $justify, $align) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin primary-button-styling-mobile {
+  height: $button-height-mobile;
+  //padding: $button-width-padding;
+  background-color: $interactive-elements-color;
+  color: $global-white-color;
+  border: none;
+  border-radius: $button-border-radius;
+}
+// USING MIXIN W/ DEFAULT STYLING (example below)
+// @include flex(row, flex-start, stretch);
+// @include flex(column, flex-start, stretch);
+
+@mixin primary-button-styling-mobile {
+  height: $button-height-mobile;
+  //padding: $button-width-padding;
+  background-color: $interactive-elements-color;
+  color: $global-white-color;
+  border: none;
+  border-radius: $button-border-radius;
+}
+
+//mobile text styles
+@mixin body-medium-mobile {
+  font-size: 0.813rem;
+  line-height: 1.25rem;
+}
+
+@mixin body-small-mobile {
+  font-size: 0.688rem;
+  line-height: 1rem;
+}
+
+@mixin out-of-stock-tag-mobile {
+  height: $tag-height-mobile;
+  padding: 0 $tag-width-padding;
+  background-color: rgba(201, 69, 21, 0.07);
+  color: $out-of-stock-label-color;
+  border-radius: $tag-border-radius;
+  border: none;
+  font-weight: 600;
+}
+
+@mixin in-stock-tag-mobile {
+  height: $tag-height-mobile;
+  padding: 0 $tag-width-padding;
+  background-color: rgba(21, 132, 104, 0.07);
+  color: $instock-label-color;
+  border-radius: $tag-border-radius;
+  border: none;
+  font-weight: 600;
+}
+
+@mixin table-header-tablet {
+  font-size: 0.75rem;
+  line-height: 1.125rem;
+}
+
+//tablet
+
+@mixin body-medium-tablet {
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+}
+
+@mixin primary-button-styling-tablet {
+  height: $button-height-tablet;
+  //padding: $button-width-padding;
+  background-color: $interactive-elements-color;
+  color: $global-white-color;
+  border: none;
+  border-radius: $button-border-radius;
+}
+
+@mixin CTA-hover-button {
+  cursor: pointer;
+  background-color: $CTA-hover-button-color;
+}
