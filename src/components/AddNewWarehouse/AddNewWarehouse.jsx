@@ -73,6 +73,7 @@ export default function AddNewWarehouse() {
       setPosition("");
       setPhoneNumber("");
       setEmail("");
+      window.location = "/";
     } catch (error) {
       console.error(error);
     }

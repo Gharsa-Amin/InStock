@@ -37,6 +37,7 @@
   &__detail {
     @include body-medium-mobile;
     padding-bottom: $padding-mobile;
+    text-decoration: none;
 
     @include tablet {
       flex: 1;

@@ -30,7 +30,7 @@ const WarehouseEdit = () => {
     const fetchWarehouseDetails = async () => {
       try {
         const response = await axios.get(url);
-        const data = response.data[0];
+        const data = response.data;
         setWarehouse(data);
         setWarehouseName(data.warehouse_name || "");
         setStreetAddress(data.address || "");
@@ -111,6 +111,8 @@ const WarehouseEdit = () => {
       setPosition("");
       setPhoneNumber("");
       setEmail("");
+
+      window.location = "/";
     } catch (error) {
       console.error(error);
     }

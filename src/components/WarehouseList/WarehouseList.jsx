@@ -24,7 +24,7 @@ export default function WarehouseList() {
       const URL = "http://localhost:8080/api/warehouses";
       try {
         const response = await axios.get(URL);
-        console.log(response.data);
+
         setWarehouses(response.data);
       } catch (error) {
         console.error(error);
@@ -36,13 +36,13 @@ export default function WarehouseList() {
     <>
       <section className="warehouse-list">
         {warehouses.map((warehouse) => (
-          <div key={warehouses.id}>
+          <div key={warehouse.id}>
             <div className="top-tablet">
               <div className="warehouse-list__names">
                 <h3 className="warehouse-list__title">WAREHOUSE</h3>
                 <Link
                   className="link warehouse-list__link"
-                  to="/warehouses/:id"
+                  to={`/warehouses/${warehouse.id}`}
                 >
                   <div className="warehouse-wrapper">
                     <p className="warehouse-list__name">
