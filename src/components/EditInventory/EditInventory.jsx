@@ -80,7 +80,6 @@ export default function EditInventory() {
     const updatedInventory = {
       warehouse_id: warehouses.find((wh) => wh.warehouse_name === warehouse)
         ?.id,
-
       item_name: inventoryName,
       description: description,
       category: category,

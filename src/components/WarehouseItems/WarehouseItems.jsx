@@ -1,6 +1,5 @@
 import { useState } from "react";
 import "./WarehouseItems.scss";
-import SortSVG from "../SortSVG/SortSVG";
 import { Link } from "react-router-dom";
 import DeleteInventoryItem from "../DeleteInventoryItem/DeleteInventoryItem";
 import axios from "axios";
