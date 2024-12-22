@@ -21,7 +21,9 @@ const WarehouseListHeader = () => {
         </svg>
       </div>
       <Link to="/addWarehouses">
-        <button className="warehouse-header__button">+ Add New Item</button>
+        <button className="warehouse-header__button">
+          + Add New Warehouse
+        </button>
       </Link>
     </section>
   );

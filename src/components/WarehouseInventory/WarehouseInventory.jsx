@@ -12,7 +12,6 @@ const WarehouseInventory = () => {
 
   useEffect(() => {
     const url = `http://localhost:8080/api/warehouses/${id}/inventories`;
-
     async function fetchInventories() {
       try {
         const response = await axios.get(url);

@@ -1,3 +1,206 @@
+// @use "../../styles/partials/variables" as *;
+// @use "../../styles/partials/typography" as *;
+// @use "../../styles/partials/mixins" as *;
+
+// .new-inventory {
+//   @include flex(column, center, center);
+//   background-color: $page-background-color;
+
+//   &__wrapper {
+//     background-color: $global-white-color;
+//     box-shadow: 1px 1px 5px 2px rgba(189, 197, 213, 0.2);
+//     width: 90%;
+//     position: relative;
+//     top: -90px;
+
+//     @include tablet {
+//       top: -150px;
+//     }
+//     @include desktop {
+//       max-width: 1280px;
+//     }
+//   }
+
+//   &__form-wrapper {
+//     @include tablet {
+//       @include flex(row, space-between, stretch);
+//       padding: $spacing-between-elements 0px;
+//     }
+//   }
+// }
+
+// .h1 {
+//   padding: $h1-padding 0px;
+//   @include flex(row, flex-start, center);
+// }
+
+// .arrow-back {
+//   margin-right: $spacing-between-elements;
+// }
+
+// .inventory {
+//   &__info-wrapper {
+//     @include flex(column, flex-start, stretch);
+//     padding-bottom: $spacing-between-elements;
+//   }
+
+//   &__header {
+//     padding-bottom: $spacing-between-elements * 2;
+//     border-bottom: none;
+//   }
+
+//   &__label {
+//     font-weight: $font-semibold;
+//     padding-bottom: $padding-increment;
+//   }
+
+//   &__input {
+//     border: solid 1px $outlines-dividers-borders-tablesorting-color;
+//     border-radius: $form-border-radius;
+//     height: $form-field-height-mobile;
+//     padding: 0px $form-padding-sides;
+
+//     &:focus {
+//       border: 1px solid $interactive-elements-color;
+//     }
+
+//     &.error {
+//       border-color: $error-delete-color;
+//     }
+//   }
+
+//   &__inputs {
+//     border: solid 1px $outlines-dividers-borders-tablesorting-color;
+//     border-radius: $form-border-radius;
+//     height: $form-field-height-mobile;
+//     padding: 0px $form-padding-sides;
+//     width: 120px;
+
+//     &:focus {
+//       border: 1px solid $interactive-elements-color;
+//     }
+
+//     &.error {
+//       border-color: $error-delete-color;
+//     }
+//   }
+// }
+// .error-svg {
+//   padding-right: $padding-increment;
+// }
+
+// .error-message {
+//   color: $error-delete-color;
+//   @include flex(row, flex-start, center);
+//   font-size: $body-medium-mobile;
+// }
+
+// .details {
+//   padding: 16px $form-padding-sides * 2;
+//   border-top: solid 1px $outlines-dividers-borders-tablesorting-color;
+
+//   @include tablet {
+//     width: 50%;
+//     border-top: none;
+
+//     &--inventory {
+//       border-right: solid 1px $outlines-dividers-borders-tablesorting-color;
+//       width: 50%;
+//     }
+//   }
+// }
+
+// .buttons {
+//   background-color: $page-background-color;
+//   @include flex(column, center, center);
+
+//   @include tablet {
+//     @include flex(column, center, flex-end);
+//     padding-right: $spacing-between-elements * 2;
+//   }
+
+//   &__wrapper {
+//     width: 90%;
+//     @include flex(row, space-between, center);
+//     padding: $spacing-between-elements 0px;
+
+//     @include tablet {
+//       @include flex(row, flex-end, stretch);
+//       gap: $spacing-between-elements;
+//     }
+//   }
+
+//   &__button {
+//     height: $button-height-mobile;
+//     padding: 0px $button-width-padding;
+//     border-radius: $button-border-radius;
+//     border: solid 1px $outlines-dividers-borders-tablesorting-color;
+//     @include tablet {
+//       width: auto;
+//     }
+//   }
+// }
+
+// .cancel {
+//   background-color: $global-white-color;
+// }
+
+// .add-inventory {
+//   background-color: $interactive-elements-color;
+//   color: $global-white-color;
+// }
+
+// .status-circle {
+//   display: flex;
+//   align-items: center;
+//   cursor: pointer;
+//   margin-right: 15px;
+//   font-size: 14px;
+
+//   .circle-inner {
+//     width: 16px;
+//     height: 16px;
+//     border-radius: 50%;
+//     margin-right: 8px;
+//     background-color: transparent;
+//     transition: background-color 0.3s;
+//   }
+
+//   span {
+//     color: #333;
+//   }
+
+//   &:hover {
+//     .circle-inner {
+//       border-color: #1a4d98;
+//     }
+//   }
+// }
+// textarea.inventory__input {
+//   height: 7.5rem;
+// }
+
+// .active {
+//   color: $global-text-color;
+// }
+
+// .inactive {
+//   color: $table-column-header-color;
+// }
+
+// .main-wrapper {
+//   display: flex;
+//   justify-content: flex-start;
+//   gap: 1.875rem;
+// }
+// .label {
+//   display: flex;
+//   flex-direction: row-reverse;
+// }
+// input.input-form {
+//   margin-right: $radio-group-label-spacing;
+// }
+
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/typography" as *;
 @use "../../styles/partials/mixins" as *;
@@ -5,14 +208,12 @@
 .new-inventory {
   @include flex(column, center, center);
   background-color: $page-background-color;
-
   &__wrapper {
     background-color: $global-white-color;
     box-shadow: 1px 1px 5px 2px rgba(189, 197, 213, 0.2);
     width: 90%;
     position: relative;
     top: -90px;
-
     @include tablet {
       top: -150px;
     }
@@ -20,7 +221,6 @@
       max-width: 1280px;
     }
   }
-
   &__form-wrapper {
     @include tablet {
       @include flex(row, space-between, stretch);
@@ -28,41 +228,34 @@
     }
   }
 }
-
 .h1 {
   padding: $h1-padding 0px;
   @include flex(row, flex-start, center);
 }
-
 .arrow-back {
   margin-right: $spacing-between-elements;
 }
-
 .inventory {
   &__info-wrapper {
     @include flex(column, flex-start, stretch);
     padding-bottom: $spacing-between-elements;
   }
-
   &__header {
     padding-bottom: $spacing-between-elements * 2;
+    border-bottom: none;
   }
-
   &__label {
     font-weight: $font-semibold;
     padding-bottom: $padding-increment;
   }
-
   &__input {
     border: solid 1px $outlines-dividers-borders-tablesorting-color;
     border-radius: $form-border-radius;
     height: $form-field-height-mobile;
     padding: 0px $form-padding-sides;
-
     &:focus {
       border: 1px solid $interactive-elements-color;
     }
-
     &.error {
       border-color: $error-delete-color;
     }
@@ -73,11 +266,9 @@
     height: $form-field-height-mobile;
     padding: 0px $form-padding-sides;
     width: 120px;
-
     &:focus {
       border: 1px solid $interactive-elements-color;
     }
-
     &.error {
       border-color: $error-delete-color;
     }
@@ -86,48 +277,39 @@
 .error-svg {
   padding-right: $padding-increment;
 }
-
 .error-message {
   color: $error-delete-color;
   @include flex(row, flex-start, center);
   font-size: $body-medium-mobile;
 }
-
 .details {
   padding: 16px $form-padding-sides * 2;
   border-top: solid 1px $outlines-dividers-borders-tablesorting-color;
-
   @include tablet {
     width: 50%;
     border-top: none;
-
     &--inventory {
       border-right: solid 1px $outlines-dividers-borders-tablesorting-color;
       width: 50%;
     }
   }
 }
-
 .buttons {
   background-color: $page-background-color;
   @include flex(column, center, center);
-
   @include tablet {
     @include flex(column, center, flex-end);
     padding-right: $spacing-between-elements * 2;
   }
-
   &__wrapper {
     width: 90%;
     @include flex(row, space-between, center);
     padding: $spacing-between-elements 0px;
-
     @include tablet {
       @include flex(row, flex-end, stretch);
       gap: $spacing-between-elements;
     }
   }
-
   &__button {
     height: $button-height-mobile;
     padding: 0px $button-width-padding;
@@ -138,23 +320,19 @@
     }
   }
 }
-
 .cancel {
   background-color: $global-white-color;
 }
-
 .add-inventory {
   background-color: $interactive-elements-color;
   color: $global-white-color;
 }
-
 .status-circle {
   display: flex;
   align-items: center;
   cursor: pointer;
   margin-right: 15px;
   font-size: 14px;
-
   .circle-inner {
     width: 16px;
     height: 16px;
@@ -163,11 +341,9 @@
     background-color: transparent;
     transition: background-color 0.3s;
   }
-
   span {
     color: #333;
   }
-
   &:hover {
     .circle-inner {
       border-color: #1a4d98;
@@ -177,15 +353,12 @@
 textarea.inventory__input {
   height: 7.5rem;
 }
-
 .active {
   color: $global-text-color;
 }
-
 .inactive {
   color: $table-column-header-color;
 }
-
 .main-wrapper {
   display: flex;
   justify-content: flex-start;
